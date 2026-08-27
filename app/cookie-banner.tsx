@@ -1,16 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import { useSyncExternalStore } from "react";
+import CookieSettings from "./cookie-settings";
 
-const COOKIE_KEY = "fl_cookie_consent";
+const CONSENT_KEY = "fl_cookie_consent";
 
-type Consent = "denied" | "allowed";
-
-function readConsent(): Consent | null {
+function readConsent(): string | null {
   if (typeof window === "undefined") return null;
-  const v = localStorage.getItem(COOKIE_KEY);
-  if (v === "denied" || v === "allowed") return v;
-  return null;
+  return localStorage.getItem(CONSENT_KEY);
 }
 
 function subscribe(callback: () => void): () => void {
@@ -20,52 +18,68 @@ function subscribe(callback: () => void): () => void {
 
 export default function CookieBanner() {
   const consent = useSyncExternalStore(subscribe, readConsent, () => null);
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   if (consent !== null) return null;
 
-  function handleChoice(value: Consent) {
-    localStorage.setItem(COOKIE_KEY, value);
+  function denyAll() {
+    localStorage.setItem(
+      CONSENT_KEY,
+      JSON.stringify({ necessary: true, analytical: false, marketing: false })
+    );
+    window.dispatchEvent(new Event("storage"));
+  }
+
+  function allowAll() {
+    localStorage.setItem(
+      CONSENT_KEY,
+      JSON.stringify({ necessary: true, analytical: true, marketing: true })
+    );
     window.dispatchEvent(new Event("storage"));
   }
 
   return (
-    <div className="cookie-banner" role="region" aria-label="Cookie consent">
-      <div className="cookie-banner-inner">
-        <div className="cookie-banner-text">
-          <h2>About cookies on this site</h2>
-          <p>
-            Our website uses cookies to distinguish you from other users of our
-            website. This helps us to provide you with a good experience when you
-            browse our website and also allows us to improve our site.{" "}
-            <a href="https://fundleaf.co.uk/legal/cookies">Learn more</a>
-          </p>
-        </div>
-        <div className="cookie-banner-actions">
-          <button
-            type="button"
-            className="cookie-btn cookie-btn-outline"
-            onClick={() => {
-              /* placeholder for future settings panel */
-            }}
-          >
-            Cookie settings
-          </button>
-          <button
-            type="button"
-            className="cookie-btn cookie-btn-fill"
-            onClick={() => handleChoice("denied")}
-          >
-            Deny all
-          </button>
-          <button
-            type="button"
-            className="cookie-btn cookie-btn-fill"
-            onClick={() => handleChoice("allowed")}
-          >
-            Allow all cookies
-          </button>
+    <>
+      <div className="cookie-banner" role="region" aria-label="Cookie consent">
+        <div className="cookie-banner-inner">
+          <div className="cookie-banner-text">
+            <h2>About cookies on this site</h2>
+            <p>
+              Our website uses cookies to distinguish you from other users of
+              our website. This helps us to provide you with a good experience
+              when you browse our website and also allows us to improve our site.{" "}
+              <a href="https://fundleaf.co.uk/legal/cookies">Learn more</a>
+            </p>
+          </div>
+          <div className="cookie-banner-actions">
+            <button
+              type="button"
+              className="cookie-btn cookie-btn-outline"
+              onClick={() => setSettingsOpen(true)}
+            >
+              Cookie settings
+            </button>
+            <button
+              type="button"
+              className="cookie-btn cookie-btn-fill"
+              onClick={denyAll}
+            >
+              Deny all
+            </button>
+            <button
+              type="button"
+              className="cookie-btn cookie-btn-fill"
+              onClick={allowAll}
+            >
+              Allow all cookies
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+      <CookieSettings
+        open={settingsOpen}
+        onClose={() => setSettingsOpen(false)}
+      />
+    </>
   );
 }
