@@ -739,6 +739,86 @@ h3 {
   color: var(--color-text-muted);
 }
 
+/* ── Deadline section ────────────────────────────────── */
+
+.deadline {
+  background: var(--fl-olive-deep);
+  color: var(--fl-cream);
+  border-top: var(--border-subtle);
+}
+
+.deadline-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+@media (min-width: 48rem) {
+  .deadline-inner {
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-8);
+  }
+}
+
+.deadline-copy h2 {
+  color: var(--fl-cream);
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-4);
+}
+
+.deadline-copy p {
+  margin: 0;
+  color: rgba(250, 247, 240, 0.82);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  max-width: 32rem;
+}
+
+.deadline-calendar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.deadline-item {
+  background: rgba(250, 247, 240, 0.06);
+  border: 1px solid rgba(250, 247, 240, 0.12);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.deadline-item--urgent {
+  background: rgba(220, 110, 50, 0.14);
+  border-color: rgba(220, 110, 50, 0.3);
+}
+
+.deadline-label {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(250, 247, 240, 0.6);
+  flex-shrink: 0;
+}
+
+.deadline-item--urgent .deadline-label {
+  color: #f0a56e;
+}
+
+.deadline-name {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--fl-cream);
+  text-align: right;
+}
+
 /* ── Features ───────────────────────────────────────── */
 
 .features {

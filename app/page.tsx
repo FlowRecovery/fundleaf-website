@@ -207,6 +207,36 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="deadline section" aria-labelledby="deadline-heading">
+        <div className="deadline-inner">
+          <div className="deadline-copy">
+            <h2 id="deadline-heading">
+              A missed deadline is the most expensive thing in fundraising.
+            </h2>
+            <p>
+              Application windows, submission dates and reporting obligations
+              all sit on one calendar, with reminders that escalate as the date
+              approaches. Fundleaf is built so that the deadline is never the
+              thing you find out about too late.
+            </p>
+          </div>
+          <div className="deadline-calendar" aria-hidden="true">
+            <div className="deadline-item deadline-item--urgent">
+              <span className="deadline-label">Tomorrow</span>
+              <span className="deadline-name">National Lottery &ndash; application close</span>
+            </div>
+            <div className="deadline-item">
+              <span className="deadline-label">7 days</span>
+              <span className="deadline-name">Tudor Trust &ndash; quarterly deadline</span>
+            </div>
+            <div className="deadline-item">
+              <span className="deadline-label">21 days</span>
+              <span className="deadline-name">Annual report to Garfield Weston</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="features section" aria-labelledby="features-heading">
         <div className="features-inner">
           <h2 id="features-heading">
