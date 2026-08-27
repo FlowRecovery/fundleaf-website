@@ -1,28 +1,39 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-      <main>
-        <section className="hero">
-          <Image
-            src="/fundleaf_logo.svg"
-            alt="Fundleaf"
-            className="brand-logo"
-            width={240}
-            height={135}
-            priority
-          />
-          <h1>Funding, organised.</h1>
-          <p className="intro">
-            A simpler way to keep funding opportunities, applications and
-            relationships in one place.
-          </p>
-          <p className="status">Coming soon</p>
-        </section>
-      </main>
+      <section className="hero">
+        <div className="hero-inner">
+          <div className="hero-copy">
+            <p className="eyebrow" style={{ color: "var(--fl-olive)" }}>
+              Funding, organised.
+            </p>
+            <h1>
+              Find the funding to do more good.
+            </h1>
+            <p className="hero-intro">
+              Relevant opportunities, clearer eligibility and a calmer way to
+              build your funding shortlist — all in one place.
+            </p>
+            <div className="hero-actions">
+              <Link href="#" className="button-primary">
+                Start finding funding
+              </Link>
+              <Link href="/pricing" className="button-secondary">
+                See how it works
+              </Link>
+            </div>
+          </div>
+          <div className="hero-product">
+            <p className="hero-product-placeholder">
+              Product UI coming soon
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <section className="workflow" aria-labelledby="workflow-heading">
+      <section className="workflow section" aria-labelledby="workflow-heading">
         <div className="workflow-inner">
           <h2 id="workflow-heading">How it works</h2>
           <p className="workflow-sub">
@@ -59,9 +70,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="features" aria-labelledby="features-heading">
+      <section className="features section" aria-labelledby="features-heading">
         <div className="features-inner">
-          <h2 id="features-heading">Built for organisations that need focus</h2>
+          <h2 id="features-heading">
+            Built for organisations that need focus
+          </h2>
           <ul className="features-list">
             <li>
               <h3>One place for everything</h3>
@@ -91,7 +104,9 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-inner">
           <p className="footer-brand">Fundleaf</p>
-          <p className="footer-copy">&copy; {new Date().getFullYear()} Fundleaf</p>
+          <p className="footer-copy">
+            &copy; {new Date().getFullYear()} Fundleaf
+          </p>
         </div>
       </footer>
     </>

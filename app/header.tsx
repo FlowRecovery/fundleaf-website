@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link href="/" className="header-brand">
+        <Link href="/" className="header-brand" aria-label="Fundleaf home">
           <Image
             src="/fundleaf_logo.svg"
             alt="Fundleaf"
@@ -14,11 +14,16 @@ export default function Header() {
             priority
           />
         </Link>
-        <nav aria-label="Main">
-          <Link href="/pricing" className="header-link">
-            Pricing
+        <div className="header-nav">
+          <nav aria-label="Main">
+            <Link href="/pricing" className="header-link">
+              Pricing
+            </Link>
+          </nav>
+          <Link href="#" className="header-cta">
+            Get started
           </Link>
-        </nav>
+        </div>
       </div>
     </header>
   );

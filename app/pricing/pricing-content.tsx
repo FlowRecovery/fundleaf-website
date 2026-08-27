@@ -172,10 +172,10 @@ export default function PricingContent() {
         <h2>Ready to get organised?</h2>
         <p>Start with the free plan or get in touch to find the right fit.</p>
         <div className="pricing-cta-btns">
-          <a href="#" className="tier-cta tier-cta-primary">
+          <a href="#" className="button-primary">
             Get started
           </a>
-          <a href="#" className="tier-cta">
+          <a href="#" className="button-secondary">
             Contact us
           </a>
         </div>
