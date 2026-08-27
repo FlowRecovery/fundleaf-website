@@ -37,7 +37,7 @@ export default function CookieBanner() {
             Our website uses cookies to distinguish you from other users of our
             website. This helps us to provide you with a good experience when you
             browse our website and also allows us to improve our site.{" "}
-            <a href="https://fundleaf.co.uk/cookies">Learn more</a>
+            <a href="https://fundleaf.co.uk/legal/cookies">Learn more</a>
           </p>
         </div>
         <div className="cookie-banner-actions">

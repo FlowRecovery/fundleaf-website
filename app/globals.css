@@ -301,3 +301,69 @@ h1 {
     min-width: max-content;
   }
 }
+
+/* ── Legal pages ────────────────────────────────────── */
+
+.legal {
+  padding: 5rem 2rem 6rem;
+}
+
+.legal-inner {
+  width: min(44rem, 100%);
+  margin: 0 auto;
+}
+
+.legal h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.04em;
+  margin-bottom: 2rem;
+}
+
+.legal h2 {
+  font-size: 1.25rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal p {
+  margin: 0 0 1rem;
+  line-height: 1.6;
+}
+
+.legal ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.legal li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.legal a {
+  color: var(--leaf);
+  text-decoration: underline;
+}
+
+.legal-table-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0 2rem;
+}
+
+.legal table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.legal th,
+.legal td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.legal th {
+  font-weight: 700;
+  white-space: nowrap;
+}
