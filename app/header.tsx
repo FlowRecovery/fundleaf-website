@@ -34,6 +34,9 @@ export default function Header() {
             <Link href="/for-charities" className="header-link">
               For Charities
             </Link>
+            <Link href="/resources" className="header-link">
+              Resources
+            </Link>
             <Link href="/pricing" className="header-link">
               Pricing
             </Link>
