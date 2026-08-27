@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useSyncExternalStore } from "react";
 
 const CONSENT_KEY = "fl_cookie_consent";
 
@@ -28,6 +28,12 @@ function readConsent(): ConsentState {
   } catch {
     return defaultState;
   }
+}
+
+function subscribeConsent(callback: () => void) {
+  const handler = () => callback();
+  window.addEventListener("storage", handler);
+  return () => window.removeEventListener("storage", handler);
 }
 
 function writeConsent(state: ConsentState) {
@@ -103,7 +109,7 @@ interface CookieSettingsProps {
 
 export default function CookieSettings({ open, onClose }: CookieSettingsProps) {
   const [tab, setTab] = useState<"categories" | "declaration">("categories");
-  const [state, setState] = useState<ConsentState>(() => readConsent());
+  const state = useSyncExternalStore(subscribeConsent, readConsent, () => defaultState);
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -135,19 +141,18 @@ export default function CookieSettings({ open, onClose }: CookieSettingsProps) {
 
   function toggleCategory(cat: Category) {
     if (cat === "necessary") return;
-    setState((prev) => ({ ...prev, [cat]: !prev[cat] }));
+    writeConsent({ ...state, [cat]: !state[cat] });
   }
 
   function allowAll() {
-    setState({ necessary: true, analytical: true, marketing: true });
+    writeConsent({ necessary: true, analytical: true, marketing: true });
   }
 
   function denyAll() {
-    setState({ necessary: true, analytical: false, marketing: false });
+    writeConsent({ necessary: true, analytical: false, marketing: false });
   }
 
   function save() {
-    writeConsent(state);
     handleClose();
   }
 
