@@ -5,6 +5,7 @@ import Link from "next/link";
 import OpportunityCard, {
   type Opportunity,
 } from "../components/opportunity-card";
+import WeeklyShortlist from "../components/weekly-shortlist";
 
 const SAMPLE_OPPORTUNITIES: Opportunity[] = [
   {
@@ -348,6 +349,13 @@ export default function FundingDatabaseClient() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="ws-fdb-heading">
+        <div style={{ width: "min(var(--container-max), calc(100% - (2 * var(--gutter))))", marginInline: "auto" }}>
+          <p id="ws-fdb-heading" className="sr-only">Weekly shortlist</p>
+          <WeeklyShortlist />
         </div>
       </section>
 

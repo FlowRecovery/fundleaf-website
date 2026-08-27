@@ -1,4 +1,5 @@
 import Link from "next/link";
+import WeeklyShortlist from "./components/weekly-shortlist";
 
 export default function Home() {
   return (
@@ -204,6 +205,13 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="ws-home-heading">
+        <div style={{ width: "min(var(--container-max), calc(100% - (2 * var(--gutter))))", marginInline: "auto" }}>
+          <p id="ws-home-heading" className="sr-only">Weekly shortlist</p>
+          <WeeklyShortlist />
         </div>
       </section>
 
