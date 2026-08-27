@@ -2085,3 +2085,403 @@ main {
   border-color: var(--fl-cream);
   background: rgba(255, 255, 255, 0.1);
 }
+
+/* ── Opportunity card ────────────────────────────────── */
+
+.opp-card {
+  background: var(--fl-white);
+  border: var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+}
+
+.opp-card-header {
+  margin-bottom: var(--space-3);
+}
+
+.opp-card-name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-base);
+  margin-bottom: var(--space-1);
+}
+
+.opp-card-funder {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.opp-card-meta {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+}
+
+.opp-card-amount {
+  font-weight: 600;
+}
+
+.opp-card-deadline {
+  color: var(--color-text-muted);
+}
+
+.opp-card-eligibility {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.opp-card-eligibility li {
+  position: relative;
+  padding-left: var(--space-5);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.opp-card-eligibility li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--fl-olive);
+  font-weight: 700;
+}
+
+/* ── Funding database page ───────────────────────────── */
+
+.fdb-hero {
+  background: var(--fl-canvas);
+  border-top: var(--border-subtle);
+  padding: var(--space-10) 0;
+}
+
+.fdb-hero-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+}
+
+.fdb-hero h1 {
+  margin-bottom: var(--space-4);
+}
+
+.fdb-hero-sub {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  max-width: 36rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-6);
+}
+
+.fdb-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.fdb-search {
+  background: var(--fl-cream);
+  border-top: var(--border-subtle);
+}
+
+.fdb-search-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+}
+
+.fdb-search-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-5);
+}
+
+.fdb-search-header h2 {
+  margin-bottom: 0;
+}
+
+.fdb-filter-toggle {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.fdb-filter-toggle:hover {
+  border-color: var(--fl-olive);
+  color: var(--fl-olive-deep);
+}
+
+.fdb-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-5);
+  border-bottom: var(--border-subtle);
+}
+
+.fdb-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 12rem;
+}
+
+.fdb-filter-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.fdb-select {
+  appearance: none;
+  background: var(--fl-white) url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-8) var(--space-2) var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.fdb-select:focus {
+  border-color: var(--fl-focus);
+  outline: 2px solid var(--fl-focus);
+  outline-offset: 2px;
+}
+
+.fdb-reset {
+  background: none;
+  border: none;
+  color: var(--fl-olive-deep);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  text-decoration: underline;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.fdb-results-count {
+  margin-bottom: var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.fdb-results {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 48rem) {
+  .fdb-results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.fdb-empty {
+  text-align: center;
+  padding: var(--space-10) var(--space-4);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.fdb-empty-heading {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-2);
+}
+
+.fdb-empty-body {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-5);
+}
+
+.fdb-anatomy {
+  background: var(--fl-white);
+  border-top: var(--border-subtle);
+}
+
+.fdb-anatomy-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 48rem) {
+  .fdb-anatomy-inner {
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-8);
+    align-items: center;
+  }
+}
+
+.fdb-anatomy-text h2 {
+  margin-bottom: var(--space-4);
+}
+
+.fdb-anatomy-sub {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 28rem;
+}
+
+.fdb-anatomy-card {
+  background: var(--fl-canvas);
+  border: var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+
+.fdb-anatomy-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-4);
+  border-bottom: var(--border-subtle);
+}
+
+.fdb-anatomy-name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-base);
+}
+
+.fdb-anatomy-funder {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.fdb-anatomy-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.fdb-anatomy-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-3);
+  align-items: baseline;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+}
+
+.fdb-anatomy-label {
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--fl-olive-deep);
+}
+
+.fdb-anatomy-line {
+  height: 1px;
+  background: var(--color-border);
+  min-width: 2rem;
+}
+
+.fdb-anatomy-value {
+  text-align: right;
+  color: var(--color-text-muted);
+}
+
+.fdb-matching {
+  background: var(--fl-cream);
+  border-top: var(--border-subtle);
+}
+
+.fdb-matching-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+}
+
+.fdb-matching h2 {
+  margin-bottom: var(--space-6);
+}
+
+.fdb-matching-columns {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 48rem) {
+  .fdb-matching-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.fdb-matching-col h3 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-base);
+  margin-bottom: var(--space-3);
+}
+
+.fdb-matching-col p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.fdb-cta {
+  background: var(--fl-olive-deep);
+  color: var(--fl-cream);
+  border-top: var(--border-subtle);
+  text-align: center;
+}
+
+.fdb-cta-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+}
+
+.fdb-cta h2 {
+  color: var(--fl-cream);
+  margin-bottom: var(--space-3);
+}
+
+.fdb-cta p {
+  color: rgba(250, 247, 240, 0.82);
+  margin-bottom: var(--space-5);
+}
+
+.fdb-cta-btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.fdb-cta .button-primary {
+  background: var(--fl-cream);
+  color: var(--fl-olive-deep);
+  border-color: var(--fl-cream);
+}
+
+.fdb-cta .button-primary:hover {
+  background: var(--fl-white);
+  border-color: var(--fl-white);
+}
+
+.fdb-cta .button-secondary {
+  border-color: var(--fl-cream);
+  color: var(--fl-cream);
+}
+
+.fdb-cta .button-secondary:hover {
+  border-color: var(--fl-white);
+  background: rgba(255, 255, 255, 0.1);
+}

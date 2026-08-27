@@ -27,6 +27,9 @@ export default function Header() {
         <div className="header-nav">
           <nav aria-label="Main">
             <NavDropdown label="Features" items={featureItems} />
+            <Link href="/funding-database" className="header-link">
+              Funding Database
+            </Link>
             <Link href="/pricing" className="header-link">
               Pricing
             </Link>
