@@ -1,14 +1,90 @@
 export default function Home() {
   return (
-    <main>
-      <section className="hero">
-        <p className="brand">Fundleaf</p>
-        <h1>Funding, organised.</h1>
-        <p className="intro">
-          A simpler way to keep funding opportunities, applications and relationships in one place.
-        </p>
-        <p className="status">Coming soon</p>
+    <>
+      <main>
+        <section className="hero">
+          <p className="brand">Fundleaf</p>
+          <h1>Funding, organised.</h1>
+          <p className="intro">
+            A simpler way to keep funding opportunities, applications and
+            relationships in one place.
+          </p>
+          <p className="status">Coming soon</p>
+        </section>
+      </main>
+
+      <section className="workflow" aria-labelledby="workflow-heading">
+        <div className="workflow-inner">
+          <h2 id="workflow-heading">How it works</h2>
+          <p className="workflow-sub">
+            From discovery to award, Fundleaf keeps every step clear and
+            connected.
+          </p>
+          <ol className="workflow-steps">
+            <li>
+              <span className="step-num">1</span>
+              <h3>Find</h3>
+              <p>Discover funding opportunities that match your goals.</p>
+            </li>
+            <li>
+              <span className="step-num">2</span>
+              <h3>Qualify</h3>
+              <p>Check eligibility and prioritise the best fits.</p>
+            </li>
+            <li>
+              <span className="step-num">3</span>
+              <h3>Apply</h3>
+              <p>Prepare and submit applications with confidence.</p>
+            </li>
+            <li>
+              <span className="step-num">4</span>
+              <h3>Track</h3>
+              <p>Monitor progress across every active application.</p>
+            </li>
+            <li>
+              <span className="step-num">5</span>
+              <h3>Secure</h3>
+              <p>Award, onboard and manage funding relationships.</p>
+            </li>
+          </ol>
+        </div>
       </section>
-    </main>
+
+      <section className="features" aria-labelledby="features-heading">
+        <div className="features-inner">
+          <h2 id="features-heading">Built for organisations that need focus</h2>
+          <ul className="features-list">
+            <li>
+              <h3>One place for everything</h3>
+              <p>
+                Opportunities, applications and contacts live together so
+                nothing slips through the cracks.
+              </p>
+            </li>
+            <li>
+              <h3>Clear at every stage</h3>
+              <p>
+                See where each opportunity stands from first discovery through
+                to a signed agreement.
+              </p>
+            </li>
+            <li>
+              <h3>Lightweight by design</h3>
+              <p>
+                No heavy setup. Fundleaf stays out of the way and lets your
+                team focus on the work that matters.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <p className="footer-brand">Fundleaf</p>
+          <p className="footer-copy">&copy; {new Date().getFullYear()} Fundleaf</p>
+        </div>
+      </footer>
+    </>
   );
 }

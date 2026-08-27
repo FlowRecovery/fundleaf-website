@@ -3,17 +3,34 @@
   --ink: #18372b;
   --leaf: #2f7a50;
   --paper: #f5f7ef;
+  --muted: #5e7a6b;
+  --rule: #d4ddc8;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body { margin: 0; min-height: 100%; }
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
 
 body {
   background: var(--paper);
   color: var(--ink);
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
 }
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+/* ── Hero ───────────────────────────────────────────── */
 
 main {
   min-height: 100vh;
@@ -22,8 +39,178 @@ main {
   padding: 2rem;
 }
 
-.hero { width: min(44rem, 100%); }
-.brand { color: var(--leaf); font-size: 1.125rem; font-weight: 700; }
-h1 { font-size: clamp(3rem, 10vw, 6rem); letter-spacing: -0.06em; line-height: 0.95; margin: 1.5rem 0; }
-.intro { font-size: clamp(1.125rem, 2.5vw, 1.5rem); line-height: 1.5; max-width: 38rem; }
-.status { margin-top: 3rem; font-size: 0.875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.hero {
+  width: min(44rem, 100%);
+}
+
+.brand {
+  color: var(--leaf);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(3rem, 10vw, 6rem);
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+  margin: 1.5rem 0;
+}
+
+.intro {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  line-height: 1.5;
+  max-width: 38rem;
+}
+
+.status {
+  margin-top: 3rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Workflow ───────────────────────────────────────── */
+
+.workflow {
+  padding: 5rem 2rem;
+}
+
+.workflow-inner {
+  width: min(64rem, 100%);
+  margin: 0 auto;
+}
+
+.workflow h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  letter-spacing: -0.03em;
+}
+
+.workflow-sub {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 1.125rem;
+  max-width: 34rem;
+}
+
+.workflow-steps {
+  list-style: none;
+  margin: 3rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 40rem) {
+  .workflow-steps {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.workflow-steps li {
+  border-top: 2px solid var(--rule);
+  padding-top: 1.25rem;
+}
+
+.step-num {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--leaf);
+  color: var(--paper);
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.workflow-steps h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.375rem;
+}
+
+.workflow-steps p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+/* ── Features ───────────────────────────────────────── */
+
+.features {
+  padding: 5rem 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.features-inner {
+  width: min(64rem, 100%);
+  margin: 0 auto;
+}
+
+.features h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  letter-spacing: -0.03em;
+  max-width: 30rem;
+}
+
+.features-list {
+  list-style: none;
+  margin: 3rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 40rem) {
+  .features-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+.features-list li {
+  border-top: 2px solid var(--rule);
+  padding-top: 1.25rem;
+}
+
+.features-list h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.375rem;
+}
+
+.features-list p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+/* ── Footer ─────────────────────────────────────────── */
+
+.site-footer {
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.footer-inner {
+  width: min(64rem, 100%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-brand {
+  color: var(--leaf);
+  font-weight: 700;
+}
+
+.footer-copy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
