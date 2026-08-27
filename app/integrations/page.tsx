@@ -177,9 +177,9 @@ export default function IntegrationsPage() {
               applications and deadlines programmatically. If you need a
               integration we have not built yet, the API is the way to do it.
             </p>
-            <Link href="#" className="button-secondary int-dev-btn">
-              Read the API docs
-            </Link>
+        <Link href="/integrations" className="button-secondary int-dev-btn">
+          Read the API docs
+        </Link>
           </div>
           <div className="int-developer-code" aria-hidden="true">
             <pre>

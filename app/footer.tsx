@@ -26,7 +26,7 @@ const footerColumns = [
       { label: "Guides", href: "/resources" },
       { label: "Templates", href: "/resources" },
       { label: "Funder profiles", href: "/resources" },
-      { label: "API docs", href: "#" },
+      { label: "API docs", href: "/integrations" },
     ],
   },
   {
@@ -82,8 +82,8 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Fundleaf. Registered in England &amp; Wales.
           </span>
           <div className="footer-legal-links">
-            <Link href="#" className="footer-legal-link">Privacy</Link>
-            <Link href="#" className="footer-legal-link">Terms</Link>
+            <Link href="/legal/privacy" className="footer-legal-link">Privacy</Link>
+            <Link href="/legal/terms" className="footer-legal-link">Terms</Link>
             <button type="button" className="footer-legal-link footer-legal-btn">
               Cookie settings
             </button>

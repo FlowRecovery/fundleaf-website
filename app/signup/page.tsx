@@ -78,15 +78,15 @@ export default function SignupPage() {
 
         <p className="auth-footer">
           Already have an account?{" "}
-          <Link href="#" className="auth-link">
+          <Link href="/signup" className="auth-link">
             Sign in
           </Link>
         </p>
 
         <p className="auth-legal">
           By creating an account you agree to our{" "}
-          <Link href="#">Terms</Link> and{" "}
-          <Link href="#">Privacy Policy</Link>.
+          <Link href="/legal/terms">Terms</Link> and{" "}
+          <Link href="/legal/privacy">Privacy Policy</Link>.
         </p>
       </div>
     </div>

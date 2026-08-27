@@ -112,10 +112,10 @@ export default function Header() {
             </Link>
 
             <div className="header-actions">
-              <Link href="#" className="header-signin" onClick={closeAll}>
+              <Link href="/signup" className="header-signin" onClick={closeAll}>
                 Sign in
               </Link>
-              <Link href="#" className="header-cta" onClick={closeAll}>
+              <Link href="/signup" className="header-cta" onClick={closeAll}>
                 Start finding funding
               </Link>
             </div>

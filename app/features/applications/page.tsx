@@ -90,9 +90,9 @@ export default function ApplicationsPage() {
             pipeline.
           </p>
           <div className="feature-hero-actions">
-            <Link href="#" className="button-primary">
-              Start finding funding
-            </Link>
+        <Link href="/signup" className="button-primary">
+          Start finding funding
+        </Link>
             <Link href="/pricing" className="button-secondary">
               View pricing
             </Link>
@@ -164,9 +164,9 @@ export default function ApplicationsPage() {
             your team.
           </p>
           <div className="feature-cta-btns">
-            <Link href="#" className="button-primary">
-              Start finding funding
-            </Link>
+        <Link href="/signup" className="button-primary">
+          Start finding funding
+        </Link>
             <Link href="/pricing" className="button-secondary">
               View pricing
             </Link>

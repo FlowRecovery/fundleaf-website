@@ -18,10 +18,10 @@ export default function Home() {
               build your funding shortlist &ndash; all in one place.
             </p>
             <div className="hero-actions">
-              <Link href="#" className="button-primary">
+              <Link href="/signup" className="button-primary">
                 Start finding funding
               </Link>
-              <Link href="/pricing" className="button-secondary">
+              <Link href="/#how-it-works" className="button-secondary">
                 See how it works
               </Link>
             </div>
@@ -34,7 +34,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="workflow section" aria-labelledby="workflow-heading">
+      <section id="how-it-works" className="workflow section" aria-labelledby="workflow-heading">
         <div className="workflow-inner">
           <h2 id="workflow-heading">How it works</h2>
           <p className="workflow-sub">

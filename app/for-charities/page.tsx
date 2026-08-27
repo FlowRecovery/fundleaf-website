@@ -171,9 +171,9 @@ export default function ForCharitiesPage() {
             Sign up free or get in touch to find the right fit for your team.
           </p>
           <div className="fc-cta-btns">
-            <Link href="#" className="button-primary">
-              Start finding funding
-            </Link>
+        <Link href="/signup" className="button-primary">
+          Start finding funding
+        </Link>
             <Link href="/pricing" className="button-secondary">
               View pricing
             </Link>

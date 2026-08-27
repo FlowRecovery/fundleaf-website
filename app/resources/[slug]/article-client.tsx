@@ -66,9 +66,9 @@ export default function ArticleClient({ article }: { article: Article }) {
             <h2>{article.conversionHeading}</h2>
             <p>{article.conversionBody}</p>
             <div className="art-conversion-btns">
-              <Link href="#" className="button-primary">
-                Start finding funding
-              </Link>
+        <Link href="/signup" className="button-primary">
+          Start finding funding
+        </Link>
               <Link href="/pricing" className="button-secondary">
                 View pricing
               </Link>

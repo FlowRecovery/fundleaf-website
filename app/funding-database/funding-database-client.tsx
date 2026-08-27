@@ -165,9 +165,9 @@ export default function FundingDatabaseClient() {
             date so you spend less time searching and more time applying.
           </p>
           <div className="fdb-hero-actions">
-            <Link href="#" className="button-primary">
-              Start finding funding
-            </Link>
+        <Link href="/signup" className="button-primary">
+          Start finding funding
+        </Link>
             <Link href="/pricing" className="button-secondary">
               View pricing
             </Link>
@@ -366,9 +366,9 @@ export default function FundingDatabaseClient() {
             Sign up free or get in touch to talk about what your team needs.
           </p>
           <div className="fdb-cta-btns">
-            <Link href="#" className="button-primary">
-              Start finding funding
-            </Link>
+        <Link href="/signup" className="button-primary">
+          Start finding funding
+        </Link>
             <Link href="/pricing" className="button-secondary">
               View pricing
             </Link>
