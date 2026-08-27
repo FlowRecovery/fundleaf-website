@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGrantById } from "../../../../lib/data/grants";
 import { formatCurrency, formatOrgType, formatSector } from "../../../../lib/utils";
+import { evaluateFreshness, freshnessLabel, provenanceLabel, parseDeadline, deadlineLabel } from "../../../../lib/deadline";
 import MatchScore from "../../../components/match-score";
 import DeadlineBadge from "../../../components/deadline-badge";
 import EligibilityPanel from "../../../components/eligibility-panel";
@@ -28,8 +29,19 @@ export default async function GrantDetailPage({
     notFound();
   }
 
+  const freshness = evaluateFreshness(grant.lastVerified);
+  const deadlineState = parseDeadline(grant.deadline, grant.rolling);
+
   return (
     <div className="dash-page">
+      {grant.provenance === "sample" && (
+        <div className="demo-banner" role="status">
+          <p className="demo-banner-text">
+            Demonstration data &ndash; this is an illustrative opportunity, not live funding information.
+          </p>
+        </div>
+      )}
+
       <nav className="dash-breadcrumb" aria-label="Breadcrumb">
         <Link href="/dashboard/funding" className="dash-breadcrumb-link">
           Funding
@@ -43,6 +55,9 @@ export default async function GrantDetailPage({
           <div className="grant-detail-head">
             <MatchScore score={grant.matchScore} level={grant.matchLevel} />
             <DeadlineBadge deadline={grant.deadline ?? ""} rolling={grant.rolling} />
+            <span className="provenance-badge">
+              {provenanceLabel(grant.provenance)}
+            </span>
           </div>
           <h1 className="grant-detail-funder">{grant.funder}</h1>
           <p className="grant-detail-programme">{grant.programme}</p>
@@ -108,19 +123,13 @@ export default async function GrantDetailPage({
             <section className="grant-detail-section">
               <h2 className="grant-detail-section-title">Application process</h2>
               <p className="grant-detail-text">
-                {grant.rolling
+                {deadlineLabel(deadlineState) === "Ongoing"
                   ? "This funder accepts applications on a rolling basis. You can apply at any time."
-                  : grant.deadline
-                    ? `The deadline for this round is ${new Date(grant.deadline).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}.`
-                    : "Contact the funder directly for application details."}
-              </p>
-              <p className="grant-detail-text">
-                Last verified:{" "}
-                {new Date(grant.lastVerified).toLocaleDateString("en-GB", {
-                  day: "numeric",
-                  month: "long",
-                  year: "numeric",
-                })}
+                  : deadlineState.type === "date" && !deadlineState.expired
+                    ? `The deadline for this round is ${new Date(deadlineState.deadline + "T23:59:59").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}.`
+                    : deadlineState.type === "unknown"
+                      ? "Contact the funder directly for application details."
+                      : `Status: ${deadlineLabel(deadlineState)}`}
               </p>
             </section>
           </div>
@@ -152,6 +161,23 @@ export default async function GrantDetailPage({
             </div>
 
             <div className="grant-detail-meta-card">
+              <h3 className="grant-detail-meta-title">Source</h3>
+              <a
+                href={grant.sourceUrl}
+                className="grant-detail-source-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {grant.funder} website &nearr;
+              </a>
+            </div>
+
+            <div className="grant-detail-meta-card">
+              <h3 className="grant-detail-meta-title">Freshness</h3>
+              <p className="grant-detail-freshness">{freshnessLabel(freshness)}</p>
+            </div>
+
+            <div className="grant-detail-meta-card">
               <h3 className="grant-detail-meta-title">Geography</h3>
               <p>{grant.geography.join(", ")}</p>
             </div>
@@ -159,19 +185,12 @@ export default async function GrantDetailPage({
               <h3 className="grant-detail-meta-title">Organisation types</h3>
               <p>{grant.organisationTypes.map(formatOrgType).join(", ")}</p>
             </div>
-            {grant.applicationUrl && (
-              <div className="grant-detail-meta-card">
-                <h3 className="grant-detail-meta-title">Source</h3>
-                <a
-                  href={grant.sourceUrl}
-                  className="grant-detail-source-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {grant.funder} website &nearr;
-                </a>
-              </div>
-            )}
+
+            <div className="grant-detail-reminder">
+              <p>
+                Always verify eligibility and dates at the funder&apos;s source before applying.
+              </p>
+            </div>
           </aside>
         </div>
       </div>

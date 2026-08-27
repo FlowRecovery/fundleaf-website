@@ -23,6 +23,21 @@ export type PipelineStatus =
 
 export type MatchLevel = "strong" | "good" | "uncertain" | "weak";
 
+export type Provenance = "live" | "sample" | "unknown";
+
+export type DeadlineState =
+  | { type: "date"; deadline: string; expired: boolean; daysRemaining: number }
+  | { type: "rolling" }
+  | { type: "ongoing" }
+  | { type: "unknown" }
+  | { type: "closed" }
+  | { type: "malformed"; raw: string };
+
+export type FreshnessState =
+  | { status: "fresh"; lastChecked: string; daysSinceCheck: number }
+  | { status: "stale"; lastChecked: string; daysSinceCheck: number }
+  | { status: "unknown" };
+
 export interface EligibilityCriterion {
   label: string;
   status: "matched" | "uncertain" | "failed";
@@ -53,6 +68,7 @@ export interface GrantOpportunity {
   reviewReasons: string[];
   pipelineStatus: PipelineStatus;
   owner?: string;
+  provenance: Provenance;
 }
 
 export interface OrganisationProfile {

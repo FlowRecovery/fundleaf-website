@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  demoMetrics,
+  computeMetrics,
   getStrongMatches,
   getUpcomingDeadlines,
   getGrantsByStatus,
@@ -15,11 +15,18 @@ export const metadata: Metadata = {
 };
 
 export default function DashboardOverview() {
+  const metrics = computeMetrics();
   const strong = getStrongMatches();
   const deadlines = getUpcomingDeadlines().slice(0, 4);
 
   return (
     <div className="dash-page">
+      <div className="demo-banner" role="status">
+        <p className="demo-banner-text">
+          Demonstration data &ndash; these are illustrative opportunities, not live funding information.
+        </p>
+      </div>
+
       <div className="dash-header">
         <h1 className="dash-title">Funding overview</h1>
         <p className="dash-sub">
@@ -29,19 +36,19 @@ export default function DashboardOverview() {
 
       <div className="dash-metrics">
         <div className="dash-metric">
-          <span className="dash-metric-value">{demoMetrics.strongMatches}</span>
+          <span className="dash-metric-value">{metrics.strongMatches}</span>
           <span className="dash-metric-label">Strong matches</span>
         </div>
         <div className="dash-metric">
-          <span className="dash-metric-value">{demoMetrics.potentialFunding}</span>
+          <span className="dash-metric-value">{metrics.potentialFunding}</span>
           <span className="dash-metric-label">Potential funding</span>
         </div>
         <div className="dash-metric">
-          <span className="dash-metric-value">{demoMetrics.upcomingDeadlines}</span>
+          <span className="dash-metric-value">{metrics.upcomingDeadlines}</span>
           <span className="dash-metric-label">Upcoming deadlines</span>
         </div>
         <div className="dash-metric">
-          <span className="dash-metric-value">{demoMetrics.activeApplications}</span>
+          <span className="dash-metric-value">{metrics.activeApplications}</span>
           <span className="dash-metric-label">Active applications</span>
         </div>
       </div>

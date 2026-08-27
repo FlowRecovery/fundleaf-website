@@ -1,6 +1,5 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 const MATCHED_OPPORTUNITIES = [
@@ -47,23 +46,26 @@ const MATCHED_OPPORTUNITIES = [
 ];
 
 export default function OnboardingResultClient() {
-  const searchParams = useSearchParams();
-  const count = searchParams.get("count") ?? "128";
-
   return (
     <div className="onb-result-page">
+      <div className="demo-banner" role="status">
+        <p className="demo-banner-text">
+          Demonstration data &ndash; these are illustrative results, not live matches.
+        </p>
+      </div>
+
       <div className="onb-result-hero">
         <div className="onb-result-badge">
-          <span className="onb-result-badge-num">{count}</span>
-          <span className="onb-result-badge-label">opportunities found</span>
+          <span className="onb-result-badge-num">5</span>
+          <span className="onb-result-badge-label">opportunities shown</span>
         </div>
         <h1 className="onb-result-heading">
-          We found <span className="onb-result-count">{count}</span> opportunities
-          that match your organisation
+          Here are some opportunities that could match your organisation
         </h1>
         <p className="onb-result-sub">
-          Based on what you told us, these funders are a strong fit. You can
-          refine your filters at any time.
+          Based on what you told us, these funders are a strong fit. In
+          production, this would show your real matches. You can refine your
+          filters at any time.
         </p>
       </div>
 

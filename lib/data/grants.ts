@@ -1,4 +1,5 @@
 import type { GrantOpportunity, OrganisationProfile, DashboardMetrics } from "../types";
+import { parseDeadline } from "../deadline";
 
 /**
  * DEMONSTRATION DATA
@@ -7,6 +8,10 @@ import type { GrantOpportunity, OrganisationProfile, DashboardMetrics } from "..
  * and demonstration purposes. The data is modelled on real UK funding
  * organisations but the specific amounts, deadlines, eligibility
  * criteria and match scores are synthetic.
+ *
+ * Every record has provenance: "sample". Sample records must not
+ * contribute to live result counts, coverage claims, reminders or
+ * weekly shortlists.
  *
  * Do not present this data as live or verified funding information.
  */
@@ -54,6 +59,7 @@ export const demoGrants: GrantOpportunity[] = [
       "Capital funding requires separate discussion with the funder",
     ],
     pipelineStatus: "suggested",
+    provenance: "sample",
   },
   {
     id: "national-lottery-heritage",
@@ -98,6 +104,7 @@ export const demoGrants: GrantOpportunity[] = [
       "Competitive programme with assessment stages",
     ],
     pipelineStatus: "reviewing",
+    provenance: "sample",
     owner: "Fundraising team",
   },
   {
@@ -142,6 +149,7 @@ export const demoGrants: GrantOpportunity[] = [
       "Must align with specific programme priorities",
     ],
     pipelineStatus: "eligible",
+    provenance: "sample",
     owner: "Director",
   },
   {
@@ -184,6 +192,7 @@ export const demoGrants: GrantOpportunity[] = [
       "Smaller awards more accessible for new applicants",
     ],
     pipelineStatus: "suggested",
+    provenance: "sample",
   },
   {
     id: "lloyds-bank-foundation",
@@ -226,6 +235,7 @@ export const demoGrants: GrantOpportunity[] = [
       "Geography limited to England and Wales",
     ],
     pipelineStatus: "preparing",
+    provenance: "sample",
     owner: "Fundraising team",
   },
   {
@@ -269,6 +279,7 @@ export const demoGrants: GrantOpportunity[] = [
       "Strong evidence of local need required",
     ],
     pipelineStatus: "suggested",
+    provenance: "sample",
   },
   {
     id: "paul-hamlyn-foundation",
@@ -311,6 +322,7 @@ export const demoGrants: GrantOpportunity[] = [
       "Competitive programme with clear priorities",
     ],
     pipelineStatus: "suggested",
+    provenance: "sample",
   },
   {
     id: "wellcome-trust-discovery",
@@ -352,6 +364,7 @@ export const demoGrants: GrantOpportunity[] = [
       "Significant match funding contribution expected",
     ],
     pipelineStatus: "not-pursuing",
+    provenance: "sample",
   },
   {
     id: "foyle-foundation",
@@ -394,6 +407,7 @@ export const demoGrants: GrantOpportunity[] = [
       "Competitive with limited funds per round",
     ],
     pipelineStatus: "reviewing",
+    provenance: "sample",
     owner: "Director",
   },
   {
@@ -437,6 +451,7 @@ export const demoGrants: GrantOpportunity[] = [
       "Limited to specific beneficiary groups",
     ],
     pipelineStatus: "suggested",
+    provenance: "sample",
   },
   {
     id: "hlf-resilient-heritage",
@@ -479,6 +494,7 @@ export const demoGrants: GrantOpportunity[] = [
       "Competitive with assessment stages",
     ],
     pipelineStatus: "suggested",
+    provenance: "sample",
   },
   {
     id: "dulverton-trust",
@@ -521,16 +537,39 @@ export const demoGrants: GrantOpportunity[] = [
       "Capital spending restricted",
     ],
     pipelineStatus: "eligible",
+    provenance: "sample",
     owner: "Fundraising team",
   },
 ];
 
-export const demoMetrics: DashboardMetrics = {
-  strongMatches: 24,
-  potentialFunding: "£4.2m",
-  upcomingDeadlines: 7,
-  activeApplications: 3,
-};
+/**
+ * Metrics are computed from the demo data, not hardcoded.
+ * This ensures counts always reflect the actual dataset.
+ */
+export function computeMetrics(now: Date = new Date()): DashboardMetrics {
+  const strongMatches = demoGrants.filter(
+    (g) => g.matchLevel === "strong" && g.provenance === "sample"
+  ).length;
+
+  const liveGrants = demoGrants.filter((g) => g.provenance === "sample");
+  const totalMax = liveGrants.reduce((sum, g) => sum + g.amountMax, 0);
+  const potentialFunding =
+    totalMax >= 1000000
+      ? `\u00a3${(totalMax / 1000000).toFixed(1)}m`
+      : `\u00a3${(totalMax / 1000).toFixed(0)}k`;
+
+  const upcomingDeadlines = demoGrants.filter((g) => {
+    if (g.rolling || !g.deadline) return false;
+    const state = parseDeadline(g.deadline, false, now);
+    return state.type === "date" && !state.expired;
+  }).length;
+
+  const activeApplications = demoGrants.filter(
+    (g) => g.pipelineStatus === "preparing" || g.pipelineStatus === "submitted"
+  ).length;
+
+  return { strongMatches, potentialFunding, upcomingDeadlines, activeApplications };
+}
 
 export const demoOrganisation: OrganisationProfile = {
   name: "Port Sunlight Village Trust",
@@ -572,12 +611,25 @@ export function getGrantsByStatus(status: GrantOpportunity["pipelineStatus"]): G
   return demoGrants.filter((g) => g.pipelineStatus === status);
 }
 
-export function getStrongMatches(): GrantOpportunity[] {
-  return demoGrants.filter((g) => g.matchLevel === "strong");
+export function getStrongMatches(now: Date = new Date()): GrantOpportunity[] {
+  return demoGrants.filter((g) => {
+    if (g.matchLevel !== "strong") return false;
+    const deadline = parseDeadline(g.deadline, g.rolling, now);
+    return deadline.type !== "date" || !deadline.expired;
+  });
 }
 
-export function getUpcomingDeadlines(): GrantOpportunity[] {
+export function getUpcomingDeadlines(now: Date = new Date()): GrantOpportunity[] {
   return demoGrants
-    .filter((g) => g.deadline && !g.rolling)
-    .sort((a, b) => new Date(a.deadline!).getTime() - new Date(b.deadline!).getTime());
+    .filter((g) => {
+      if (!g.deadline || g.rolling) return false;
+      const state = parseDeadline(g.deadline, false, now);
+      return state.type === "date" && !state.expired;
+    })
+    .sort((a, b) => {
+      const aState = parseDeadline(a.deadline!, false, now);
+      const bState = parseDeadline(b.deadline!, false, now);
+      if (aState.type !== "date" || bState.type !== "date") return 0;
+      return aState.daysRemaining - bState.daysRemaining;
+    });
 }

@@ -151,18 +151,24 @@ export default function FundingDatabaseClient() {
 
   return (
     <>
+      <div className="demo-banner" role="status">
+        <p className="demo-banner-text">
+          Demonstration data &ndash; these are illustrative opportunities, not live funding information.
+        </p>
+      </div>
+
       <section className="fdb-hero">
         <div className="fdb-hero-inner">
           <p className="eyebrow" style={{ color: "var(--fl-olive)" }}>
             Funding database
           </p>
           <h1>
-            Every UK funder worth your time, in one&nbsp;index.
+            Relevant UK grant opportunities, clearly&nbsp;organised.
           </h1>
           <p className="fdb-hero-sub">
             Trusts and foundations, lottery distributors, statutory funders and
-            corporate giving programmes. Searchable, filterable and kept up to
-            date so you spend less time searching and more time applying.
+            corporate giving programmes. Currently showing demonstration data
+            &ndash; we are building toward comprehensive, verified coverage.
           </p>
           <div className="fdb-hero-actions">
         <Link href="/signup" className="button-primary">

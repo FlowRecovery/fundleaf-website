@@ -1,5 +1,5 @@
 import type { GrantOpportunity } from "../../lib/types";
-import { formatCurrency } from "../../lib/utils";
+import { formatCurrency, provenanceLabel } from "../../lib/utils";
 import MatchScore from "./match-score";
 import DeadlineBadge from "./deadline-badge";
 
@@ -15,6 +15,9 @@ export default function GrantCard({ grant, href }: GrantCardProps) {
         <MatchScore score={grant.matchScore} level={grant.matchLevel} size="sm" />
         <DeadlineBadge deadline={grant.deadline ?? ""} rolling={grant.rolling} />
       </div>
+      {grant.provenance === "sample" && (
+        <span className="provenance-badge">{provenanceLabel(grant.provenance)}</span>
+      )}
       <h3 className="grant-card-funder">{grant.funder}</h3>
       <p className="grant-card-programme">{grant.programme}</p>
       <p className="grant-card-amount">

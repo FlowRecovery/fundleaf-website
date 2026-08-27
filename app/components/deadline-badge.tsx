@@ -1,4 +1,4 @@
-import { formatDeadline, daysUntil } from "../../lib/utils";
+import { parseDeadline, deadlineLabel, deadlineBadgeClass } from "../../lib/deadline";
 
 interface DeadlineBadgeProps {
   deadline: string;
@@ -6,20 +6,9 @@ interface DeadlineBadgeProps {
 }
 
 export default function DeadlineBadge({ deadline, rolling }: DeadlineBadgeProps) {
-  if (rolling) {
-    return <span className="deadline-badge deadline-badge--rolling">Rolling</span>;
-  }
+  const state = parseDeadline(deadline, rolling);
+  const label = deadlineLabel(state);
+  const className = `deadline-badge ${deadlineBadgeClass(state)}`;
 
-  const days = daysUntil(deadline);
-  let className = "deadline-badge";
-
-  if (days <= 14) className += " deadline-badge--urgent";
-  else if (days <= 30) className += " deadline-badge--soon";
-  else className += " deadline-badge--normal";
-
-  return (
-    <span className={className}>
-      {formatDeadline(deadline)}
-    </span>
-  );
+  return <span className={className}>{label}</span>;
 }
