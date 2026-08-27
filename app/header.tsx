@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import NavDropdown from "./nav-dropdown";
 
 export default function Header() {
   return (
@@ -19,6 +20,7 @@ export default function Header() {
             <Link href="/pricing" className="header-link">
               Pricing
             </Link>
+            <NavDropdown />
           </nav>
           <Link href="#" className="header-cta">
             Get started

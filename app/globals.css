@@ -266,6 +266,69 @@ h3 {
   transform: translateY(0);
 }
 
+/* ── Nav dropdown ───────────────────────────────────── */
+
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+.nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  background: none;
+  border: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.nav-dropdown-trigger:hover {
+  color: var(--color-accent);
+}
+
+.nav-chevron {
+  transition: transform 180ms ease;
+}
+
+.nav-chevron-open {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 12rem;
+  background: var(--fl-white);
+  border: var(--border-subtle);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-raised);
+  padding: var(--space-2) 0;
+  z-index: 200;
+}
+
+.nav-dropdown-item {
+  display: block;
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background 120ms ease;
+}
+
+.nav-dropdown-item:hover {
+  background: var(--fl-sage-pale);
+  color: var(--color-text);
+}
+
 /* ── Hero ───────────────────────────────────────────── */
 
 .hero {
@@ -1201,4 +1264,192 @@ main {
   border-top: var(--border-subtle);
   display: flex;
   justify-content: flex-end;
+}
+
+/* ── Security page ──────────────────────────────────── */
+
+.security-hero {
+  padding-block: clamp(5rem, 12vw, 9rem);
+  padding-inline: var(--gutter);
+}
+
+.security-hero-inner {
+  width: min(var(--container-max), 100%);
+  margin: 0 auto;
+  max-width: 40rem;
+}
+
+.security-hero h1 {
+  margin-block: var(--space-4) var(--space-5);
+}
+
+.security-hero-sub {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  max-width: 34rem;
+}
+
+.security-grid {
+  background: var(--fl-cream);
+  border-top: var(--border-subtle);
+}
+
+.security-grid-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+}
+
+.security-grid h2 {
+  margin-bottom: var(--space-4);
+}
+
+.security-grid-sub {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  max-width: 34rem;
+  margin-bottom: var(--space-8);
+}
+
+.security-cards {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 48rem) {
+  .security-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 72rem) {
+  .security-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.security-card {
+  background: var(--fl-white);
+  border: var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+
+.security-card h3 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-base);
+  margin-bottom: var(--space-3);
+}
+
+.security-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+/* GDPR section */
+
+.security-gdpr {
+  border-top: var(--border-subtle);
+}
+
+.security-gdpr-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+  display: grid;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (min-width: 48rem) {
+  .security-gdpr-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.security-gdpr-copy h2 {
+  margin-bottom: var(--space-4);
+}
+
+.security-gdpr-copy p {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  max-width: 28rem;
+}
+
+.security-gdpr-cards {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.security-gdpr-card {
+  border-top: 2px solid var(--color-border);
+  padding-top: var(--space-5);
+}
+
+.security-gdpr-card h3 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-base);
+  margin-bottom: var(--space-3);
+}
+
+.security-gdpr-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+/* Security CTA */
+
+.security-cta {
+  background: var(--fl-olive-deep);
+  color: var(--fl-cream);
+}
+
+.security-cta-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+  text-align: center;
+  max-width: 36rem;
+}
+
+.security-cta h2 {
+  margin-bottom: var(--space-4);
+}
+
+.security-cta p {
+  color: var(--fl-sage);
+  margin: 0 0 var(--space-7);
+  line-height: 1.6;
+}
+
+.security-cta-btns {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.security-cta .button-primary {
+  background: var(--fl-cream);
+  color: var(--fl-olive-deep);
+}
+
+.security-cta .button-primary:hover {
+  background: var(--fl-white);
+}
+
+.security-cta .button-secondary {
+  border-color: var(--fl-sage);
+  color: var(--fl-cream);
+}
+
+.security-cta .button-secondary:hover {
+  border-color: var(--fl-cream);
+  background: rgba(255, 255, 255, 0.1);
 }
