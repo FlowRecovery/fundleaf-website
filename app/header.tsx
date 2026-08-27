@@ -30,6 +30,9 @@ export default function Header() {
             <Link href="/funding-database" className="header-link">
               Funding Database
             </Link>
+            <Link href="/for-charities" className="header-link">
+              For Charities
+            </Link>
             <Link href="/pricing" className="header-link">
               Pricing
             </Link>

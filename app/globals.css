@@ -2485,3 +2485,287 @@ main {
   border-color: var(--fl-white);
   background: rgba(255, 255, 255, 0.1);
 }
+
+/* ── For charities page ──────────────────────────────── */
+
+.fc-hero {
+  background: var(--fl-canvas);
+  border-top: var(--border-subtle);
+  padding: var(--space-10) 0;
+}
+
+.fc-hero-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+}
+
+.fc-hero h1 {
+  margin-bottom: var(--space-4);
+}
+
+.fc-hero-sub {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  max-width: 36rem;
+  line-height: 1.6;
+}
+
+/* Profile sections */
+
+.fc-profile {
+  border-top: var(--border-subtle);
+}
+
+.fc-profile--cream {
+  background: var(--fl-cream);
+}
+
+.fc-profile--sand {
+  background: var(--fl-sand);
+}
+
+.fc-profile-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 48rem) {
+  .fc-profile-inner {
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+}
+
+.fc-profile-copy h2 {
+  margin-bottom: var(--space-4);
+}
+
+.fc-profile-body {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.fc-profile-bullets ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fc-profile-bullets li {
+  position: relative;
+  padding-left: var(--space-6);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.fc-profile-bullets li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--fl-olive);
+  font-weight: 700;
+}
+
+/* Does not do section */
+
+.fc-does-not {
+  background: var(--fl-sand);
+  border-top: var(--border-subtle);
+}
+
+.fc-does-not-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+}
+
+.fc-does-not h2 {
+  margin-bottom: var(--space-4);
+}
+
+.fc-does-not-sub {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  max-width: 36rem;
+  margin-bottom: var(--space-6);
+}
+
+.fc-does-not-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 48rem) {
+  .fc-does-not-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.fc-does-not-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.fc-does-not-x {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--fl-white);
+  border: 1px solid var(--color-border);
+  color: var(--fl-stone);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Comparison table */
+
+.fc-comparison {
+  background: var(--fl-white);
+  border-top: var(--border-subtle);
+}
+
+.fc-comparison-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+}
+
+.fc-comparison h2 {
+  margin-bottom: var(--space-3);
+}
+
+.fc-comparison-sub {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-6);
+}
+
+.fc-comparison-table {
+  border: var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.fc-comparison-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--fl-cream);
+  padding: var(--space-4) var(--space-5);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  border-bottom: var(--border-subtle);
+}
+
+.fc-comparison-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: var(--border-subtle);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.fc-comparison-row:last-child {
+  border-bottom: none;
+}
+
+.fc-comparison-reality {
+  color: var(--color-text-muted);
+  padding-right: var(--space-4);
+}
+
+.fc-comparison-fundleaf {
+  color: var(--fl-olive-deep);
+  font-weight: 500;
+  padding-left: var(--space-4);
+  border-left: 1px solid var(--color-border);
+}
+
+@media (max-width: 47.99rem) {
+  .fc-comparison-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .fc-comparison-fundleaf {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-2);
+  }
+
+  .fc-comparison-header span:last-child {
+    display: none;
+  }
+
+  .fc-comparison-header {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CTA */
+
+.fc-cta {
+  background: var(--fl-olive-deep);
+  color: var(--fl-cream);
+  border-top: var(--border-subtle);
+  text-align: center;
+}
+
+.fc-cta-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+}
+
+.fc-cta h2 {
+  color: var(--fl-cream);
+  margin-bottom: var(--space-3);
+}
+
+.fc-cta p {
+  color: rgba(250, 247, 240, 0.82);
+  margin-bottom: var(--space-5);
+}
+
+.fc-cta-btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.fc-cta .button-primary {
+  background: var(--fl-cream);
+  color: var(--fl-olive-deep);
+  border-color: var(--fl-cream);
+}
+
+.fc-cta .button-primary:hover {
+  background: var(--fl-white);
+  border-color: var(--fl-white);
+}
+
+.fc-cta .button-secondary {
+  border-color: var(--fl-cream);
+  color: var(--fl-cream);
+}
+
+.fc-cta .button-secondary:hover {
+  border-color: var(--fl-white);
+  background: rgba(255, 255, 255, 0.1);
+}
