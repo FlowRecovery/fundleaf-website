@@ -4,6 +4,7 @@ import NavDropdown from "./nav-dropdown";
 
 const featureItems = [
   { label: "Fundraising CRM", href: "/features/fundraising-crm" },
+  { label: "Applications", href: "/features/applications" },
 ];
 
 const companyItems = [

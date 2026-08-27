@@ -1573,6 +1573,115 @@ main {
   line-height: 1.6;
 }
 
+/* Workflow cards */
+
+.feature-workflow {
+  border-top: var(--border-subtle);
+}
+
+.feature-workflow-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+}
+
+.feature-workflow h2 {
+  margin-bottom: var(--space-4);
+}
+
+.feature-workflow-sub {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  max-width: 34rem;
+  margin-bottom: var(--space-8);
+}
+
+.feature-workflow-cards {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 48rem) {
+  .feature-workflow-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature-workflow-card {
+  background: var(--fl-white);
+  border: var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+
+.feature-workflow-card h3 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-base);
+  margin-bottom: var(--space-3);
+}
+
+.feature-workflow-card > p {
+  margin: 0 0 var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.feature-workflow-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.feature-workflow-card li {
+  position: relative;
+  padding-left: var(--space-6);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  margin-bottom: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+.feature-workflow-card li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--fl-olive);
+  font-weight: 700;
+}
+
+/* Capability cards */
+
+.feature-capability-cards {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 48rem) {
+  .feature-capability-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.feature-capability-card {
+  border-top: 2px solid var(--color-border);
+  padding-top: var(--space-5);
+}
+
+.feature-capability-card h3 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-base);
+  margin-bottom: var(--space-3);
+}
+
+.feature-capability-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
 /* Capabilities */
 
 .feature-capabilities {
