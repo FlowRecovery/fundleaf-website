@@ -1,4 +1,43 @@
+import Link from "next/link";
+import Image from "next/image";
 import WeeklyShortlist from "./components/weekly-shortlist";
+
+const footerColumns = [
+  {
+    heading: "Product",
+    links: [
+      { label: "Funding database", href: "/funding-database" },
+      { label: "Applications", href: "/features/applications" },
+      { label: "Integrations", href: "/integrations" },
+      { label: "Pricing", href: "/pricing" },
+    ],
+  },
+  {
+    heading: "For charities",
+    links: [
+      { label: "Solo fundraisers", href: "/for-charities#solo" },
+      { label: "Small teams", href: "/for-charities#small" },
+      { label: "Departments", href: "/for-charities#department" },
+    ],
+  },
+  {
+    heading: "Resources",
+    links: [
+      { label: "Guides", href: "/resources" },
+      { label: "Templates", href: "/resources" },
+      { label: "Funder profiles", href: "/resources" },
+      { label: "API docs", href: "#" },
+    ],
+  },
+  {
+    heading: "Company",
+    links: [
+      { label: "About", href: "#" },
+      { label: "Security & GDPR", href: "/security" },
+      { label: "Accessibility", href: "/accessibility" },
+    ],
+  },
+];
 
 export default function Footer() {
   return (
@@ -7,11 +46,49 @@ export default function Footer() {
         <div className="footer-shortlist">
           <WeeklyShortlist id="footer-shortlist" />
         </div>
-        <div className="footer-bottom">
-          <p className="footer-brand">Fundleaf</p>
-          <p className="footer-copy">
-            &copy; {new Date().getFullYear()} Fundleaf
+
+        <div className="footer-columns">
+          {footerColumns.map((col) => (
+            <div key={col.heading} className="footer-col">
+              <h3 className="footer-col-heading">{col.heading}</h3>
+              <ul className="footer-col-list">
+                {col.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="footer-link">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="footer-brand-row">
+          <Image
+            src="/fundleaf_logo.svg"
+            alt="Fundleaf"
+            width={100}
+            height={57}
+            className="footer-logo"
+          />
+          <p className="footer-positioning">
+            Funding, organised. Find the funding to do more good.
           </p>
+        </div>
+
+        <div className="footer-legal">
+          <span className="footer-legal-text">
+            &copy; {new Date().getFullYear()} Fundleaf. Registered in England &amp; Wales.
+          </span>
+          <div className="footer-legal-links">
+            <Link href="#" className="footer-legal-link">Privacy</Link>
+            <Link href="#" className="footer-legal-link">Terms</Link>
+            <button type="button" className="footer-legal-link footer-legal-btn">
+              Cookie settings
+            </button>
+            <Link href="/accessibility" className="footer-legal-link">Accessibility</Link>
+          </div>
         </div>
       </div>
     </footer>

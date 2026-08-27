@@ -6,8 +6,20 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fundleaf.co.uk"),
-  title: "Fundleaf",
-  description: "Funding, organised.",
+  title: {
+    default: "Fundleaf — Funding, organised",
+    template: "%s | Fundleaf",
+  },
+  description:
+    "Find the funding to do more good. Fundleaf organises opportunities, applications and deadlines so your team can focus on the work that matters.",
+  openGraph: {
+    title: "Fundleaf — Funding, organised",
+    description:
+      "Find the funding to do more good. Fundleaf organises opportunities, applications and deadlines so your team can focus on the work that matters.",
+    url: "https://fundleaf.co.uk",
+    siteName: "Fundleaf",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -15,7 +27,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en-GB">
       <body>
         <Header />
-        {children}
+        <main id="main-content">
+          {children}
+        </main>
         <Footer />
         <CookieBanner />
       </body>
