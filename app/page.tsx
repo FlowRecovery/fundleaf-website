@@ -209,7 +209,7 @@ export default function Home() {
       </section>
 
       <section className="section" aria-labelledby="ws-home-heading">
-        <div style={{ width: "min(var(--container-max), calc(100% - (2 * var(--gutter))))", marginInline: "auto" }}>
+        <div className="section-inner">
           <p id="ws-home-heading" className="sr-only">Weekly shortlist</p>
           <WeeklyShortlist />
         </div>

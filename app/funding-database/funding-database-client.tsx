@@ -353,7 +353,7 @@ export default function FundingDatabaseClient() {
       </section>
 
       <section className="section" aria-labelledby="ws-fdb-heading">
-        <div style={{ width: "min(var(--container-max), calc(100% - (2 * var(--gutter))))", marginInline: "auto" }}>
+        <div className="section-inner">
           <p id="ws-fdb-heading" className="sr-only">Weekly shortlist</p>
           <WeeklyShortlist />
         </div>
