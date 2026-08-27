@@ -31,6 +31,42 @@ h3 {
   margin: 0;
 }
 
+/* ── Header ─────────────────────────────────────────── */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  z-index: 100;
+}
+
+.header-inner {
+  width: min(72rem, 100%);
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+}
+
+.header-link {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.header-link:hover {
+  color: var(--leaf);
+}
+
 /* ── Hero ───────────────────────────────────────────── */
 
 main {
@@ -44,10 +80,10 @@ main {
   width: min(44rem, 100%);
 }
 
-.brand {
-  color: var(--leaf);
-  font-size: 1.125rem;
-  font-weight: 700;
+.brand-logo {
+  display: block;
+  width: clamp(10rem, 25vw, 15rem);
+  height: auto;
 }
 
 h1 {
@@ -366,4 +402,217 @@ h1 {
 .legal th {
   font-weight: 700;
   white-space: nowrap;
+}
+
+/* ── Pricing ────────────────────────────────────────── */
+
+.pricing {
+  padding: 5rem 2rem 6rem;
+}
+
+.pricing-hero {
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto 4rem;
+}
+
+.pricing-hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.04em;
+}
+
+.pricing-sub {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+.billing-toggle {
+  display: inline-flex;
+  gap: 0;
+  margin-top: 2rem;
+  border: 1px solid var(--rule);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.toggle-btn {
+  padding: 0.625rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.toggle-active {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 9999px;
+}
+
+.toggle-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: 0.375rem;
+  opacity: 0.7;
+}
+
+/* ── Tiers ──────────────────────────────────────────── */
+
+.pricing-tiers {
+  width: min(72rem, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 48rem) {
+  .pricing-tiers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 72rem) {
+  .pricing-tiers {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.tier {
+  border: 1px solid var(--rule);
+  border-radius: 0.75rem;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tier-highlight {
+  border-color: var(--leaf);
+  box-shadow: 0 0 0 1px var(--leaf);
+}
+
+.tier-name {
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.tier-price {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0.75rem 0;
+}
+
+.tier-desc {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+  flex: 1;
+}
+
+.tier-cta {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.tier-cta-primary {
+  background: var(--leaf);
+  color: #fff;
+  border-color: var(--leaf);
+}
+
+.tier-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+}
+
+.tier-features li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  margin-bottom: 0.625rem;
+}
+
+.tier-features li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--leaf);
+  font-weight: 700;
+}
+
+/* ── FAQ ────────────────────────────────────────────── */
+
+.pricing-faq {
+  width: min(44rem, 100%);
+  margin: 5rem auto 0;
+}
+
+.pricing-faq h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 2rem;
+}
+
+.faq-list {
+  margin: 0;
+  padding: 0;
+}
+
+.faq-item {
+  border-top: 1px solid var(--rule);
+  padding: 1.5rem 0;
+}
+
+.faq-item dt {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.faq-item dd {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── Pricing CTA ────────────────────────────────────── */
+
+.pricing-cta {
+  text-align: center;
+  margin: 5rem auto 0;
+  max-width: 36rem;
+}
+
+.pricing-cta h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-cta p {
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+
+.pricing-cta-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }

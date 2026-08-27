@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Header from "./header";
 import CookieBanner from "./cookie-banner";
 import "./globals.css";
 
@@ -12,6 +13,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en-GB">
       <body>
+        <Header />
         {children}
         <CookieBanner />
       </body>

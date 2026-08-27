@@ -1,9 +1,18 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <>
       <main>
         <section className="hero">
-          <p className="brand">Fundleaf</p>
+          <Image
+            src="/fundleaf_logo.svg"
+            alt="Fundleaf"
+            className="brand-logo"
+            width={240}
+            height={135}
+            priority
+          />
           <h1>Funding, organised.</h1>
           <p className="intro">
             A simpler way to keep funding opportunities, applications and
