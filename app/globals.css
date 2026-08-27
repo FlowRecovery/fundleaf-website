@@ -1453,3 +1453,228 @@ main {
   border-color: var(--fl-cream);
   background: rgba(255, 255, 255, 0.1);
 }
+
+/* ── Feature pages ──────────────────────────────────── */
+
+.feature-hero {
+  padding-block: clamp(5rem, 12vw, 9rem);
+  padding-inline: var(--gutter);
+}
+
+.feature-hero-inner {
+  width: min(var(--container-max), 100%);
+  margin: 0 auto;
+  max-width: 44rem;
+}
+
+.feature-hero h1 {
+  margin-block: var(--space-4) var(--space-5);
+}
+
+.feature-hero-sub {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  max-width: 34rem;
+}
+
+.feature-hero-actions {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-7);
+  flex-wrap: wrap;
+}
+
+/* Product window */
+
+.feature-product {
+  background: var(--fl-cream);
+  border-top: var(--border-subtle);
+}
+
+.feature-product-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+}
+
+.feature-product-window {
+  background: var(--fl-white);
+  border: var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-raised);
+  padding: var(--space-9);
+  min-height: 24rem;
+  display: grid;
+  place-items: center;
+}
+
+.feature-product-placeholder {
+  color: var(--fl-text-soft);
+  font-size: var(--text-sm);
+}
+
+/* Feature grid */
+
+.feature-grid {
+  border-top: var(--border-subtle);
+}
+
+.feature-grid-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+}
+
+.feature-grid h2 {
+  margin-bottom: var(--space-4);
+}
+
+.feature-grid-sub {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  max-width: 34rem;
+  margin-bottom: var(--space-8);
+}
+
+.feature-cards {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 48rem) {
+  .feature-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 72rem) {
+  .feature-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature-card {
+  background: var(--fl-white);
+  border: var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+
+.feature-card h3 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-base);
+  margin-bottom: var(--space-3);
+}
+
+.feature-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+/* Capabilities */
+
+.feature-capabilities {
+  background: var(--fl-cream);
+  border-top: var(--border-subtle);
+}
+
+.feature-capabilities-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+  display: grid;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (min-width: 48rem) {
+  .feature-capabilities-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.feature-capabilities-copy h2 {
+  margin-bottom: var(--space-4);
+}
+
+.feature-capabilities-copy p {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  max-width: 28rem;
+}
+
+.feature-capabilities-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.feature-capabilities-list li {
+  position: relative;
+  padding-left: var(--space-6);
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+.feature-capabilities-list li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--fl-olive);
+  font-weight: 700;
+}
+
+/* Feature CTA */
+
+.feature-cta {
+  background: var(--fl-olive-deep);
+  color: var(--fl-cream);
+}
+
+.feature-cta-inner {
+  width: min(var(--container-max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+  text-align: center;
+  max-width: 36rem;
+}
+
+.feature-cta h2 {
+  margin-bottom: var(--space-4);
+}
+
+.feature-cta p {
+  color: var(--fl-sage);
+  margin: 0 0 var(--space-7);
+  line-height: 1.6;
+}
+
+.feature-cta-btns {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-cta .button-primary {
+  background: var(--fl-cream);
+  color: var(--fl-olive-deep);
+}
+
+.feature-cta .button-primary:hover {
+  background: var(--fl-white);
+}
+
+.feature-cta .button-secondary {
+  border-color: var(--fl-sage);
+  color: var(--fl-cream);
+}
+
+.feature-cta .button-secondary:hover {
+  border-color: var(--fl-cream);
+  background: rgba(255, 255, 255, 0.1);
+}

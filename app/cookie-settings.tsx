@@ -322,7 +322,7 @@ export default function CookieSettings({ open, onClose }: CookieSettingsProps) {
                 </div>
                 {group.cookies.map((c) => (
                   <p key={c.name} className="cookie-decl-note">
-                    <strong>{c.name}</strong> — {c.description}
+                    <strong>{c.name}</strong> &ndash; {c.description}
                   </p>
                 ))}
               </div>

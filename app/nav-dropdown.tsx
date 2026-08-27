@@ -3,7 +3,17 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
-export default function NavDropdown() {
+interface NavDropdownItem {
+  label: string;
+  href: string;
+}
+
+interface NavDropdownProps {
+  label: string;
+  items: NavDropdownItem[];
+}
+
+export default function NavDropdown({ label, items }: NavDropdownProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -26,7 +36,7 @@ export default function NavDropdown() {
         aria-haspopup="true"
         onClick={() => setOpen(!open)}
       >
-        Company
+        {label}
         <svg
           className={`nav-chevron${open ? " nav-chevron-open" : ""}`}
           width="12"
@@ -46,14 +56,17 @@ export default function NavDropdown() {
       </button>
       {open && (
         <div className="nav-dropdown-menu" role="menu">
-          <Link
-            href="/security"
-            className="nav-dropdown-item"
-            role="menuitem"
-            onClick={() => setOpen(false)}
-          >
-            GDPR &amp; Security
-          </Link>
+          {items.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="nav-dropdown-item"
+              role="menuitem"
+              onClick={() => setOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
       )}
     </div>

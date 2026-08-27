@@ -14,7 +14,7 @@ export default function Home() {
             </h1>
             <p className="hero-intro">
               Relevant opportunities, clearer eligibility and a calmer way to
-              build your funding shortlist — all in one place.
+              build your funding shortlist &ndash; all in one place.
             </p>
             <div className="hero-actions">
               <Link href="#" className="button-primary">

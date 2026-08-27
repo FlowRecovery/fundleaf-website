@@ -2,6 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import NavDropdown from "./nav-dropdown";
 
+const featureItems = [
+  { label: "Fundraising CRM", href: "/features/fundraising-crm" },
+];
+
+const companyItems = [
+  { label: "GDPR & Security", href: "/security" },
+];
+
 export default function Header() {
   return (
     <header className="site-header">
@@ -17,10 +25,11 @@ export default function Header() {
         </Link>
         <div className="header-nav">
           <nav aria-label="Main">
+            <NavDropdown label="Features" items={featureItems} />
             <Link href="/pricing" className="header-link">
               Pricing
             </Link>
-            <NavDropdown />
+            <NavDropdown label="Company" items={companyItems} />
           </nav>
           <Link href="#" className="header-cta">
             Get started

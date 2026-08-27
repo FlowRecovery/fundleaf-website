@@ -16,3 +16,7 @@ npm run dev
 Pushes to `main` deploy to the production Vercel project through its GitHub integration. Pull requests receive preview deployments.
 
 No database, analytics, forms, or other external services are required for this scaffold.
+
+## Content rules
+
+- Do not use em dashes (`—`). Use en dashes (`–`) or commas instead.

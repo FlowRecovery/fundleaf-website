@@ -83,7 +83,7 @@ const faqs = [
   },
   {
     q: "What counts as an opportunity?",
-    a: "An opportunity is any grant, investment, sponsorship or partnership you track in Fundleaf — from initial discovery through to award.",
+    a: "An opportunity is any grant, investment, sponsorship or partnership you track in Fundleaf, from initial discovery through to award.",
   },
   {
     q: "Is training included?",
