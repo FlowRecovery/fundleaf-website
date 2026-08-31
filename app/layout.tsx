@@ -12,6 +12,15 @@ export const metadata: Metadata = {
   },
   description:
     "Find the funding to do more good. Fundleaf organises opportunities, applications and deadlines so your team can focus on the work that matters.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "Fundleaf — Funding, organised",
     description:
