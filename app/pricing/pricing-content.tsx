@@ -142,7 +142,7 @@ export default function PricingContent() {
             <p className="tier-price">{annual ? tier.annual : tier.monthly}</p>
             <p className="tier-desc">{tier.description}</p>
             <a
-              href="/signup"
+              href="https://app.fundleaf.co.uk/login"
               className={`tier-cta${tier.highlight ? " tier-cta-primary" : ""}`}
             >
               {tier.cta}
@@ -172,7 +172,7 @@ export default function PricingContent() {
         <h2>Ready to get organised?</h2>
         <p>Start with the free plan or get in touch to find the right fit.</p>
         <div className="pricing-cta-btns">
-          <a href="/signup" className="button-primary">
+          <a href="https://app.fundleaf.co.uk/login" className="button-primary">
             Get started
           </a>
           <a href="mailto:hello@fundleaf.co.uk" className="button-secondary">

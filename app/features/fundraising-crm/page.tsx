@@ -66,9 +66,9 @@ export default function FundraisingCrmPage() {
             opportunity.
           </p>
           <div className="feature-hero-actions">
-        <Link href="/signup" className="button-primary">
+        <a href="https://app.fundleaf.co.uk/login" className="button-primary">
           Start finding funding
-        </Link>
+        </a>
             <Link href="/pricing" className="button-secondary">
               View pricing
             </Link>
@@ -133,9 +133,9 @@ export default function FundraisingCrmPage() {
             your team.
           </p>
           <div className="feature-cta-btns">
-        <Link href="/signup" className="button-primary">
+        <a href="https://app.fundleaf.co.uk/login" className="button-primary">
           Start finding funding
-        </Link>
+        </a>
             <Link href="/pricing" className="button-secondary">
               View pricing
             </Link>

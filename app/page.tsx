@@ -18,9 +18,9 @@ export default function Home() {
               build your funding shortlist &ndash; all in one place.
             </p>
             <div className="hero-actions">
-              <Link href="/signup" className="button-primary">
+              <a href="https://app.fundleaf.co.uk/login" className="button-primary">
                 Start finding funding
-              </Link>
+              </a>
               <Link href="/#how-it-works" className="button-secondary">
                 See how it works
               </Link>

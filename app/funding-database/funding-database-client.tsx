@@ -171,9 +171,9 @@ export default function FundingDatabaseClient() {
             &ndash; we are building toward comprehensive, verified coverage.
           </p>
           <div className="fdb-hero-actions">
-        <Link href="/signup" className="button-primary">
+        <a href="https://app.fundleaf.co.uk/login" className="button-primary">
           Start finding funding
-        </Link>
+        </a>
             <Link href="/pricing" className="button-secondary">
               View pricing
             </Link>
@@ -372,9 +372,9 @@ export default function FundingDatabaseClient() {
             Sign up free or get in touch to talk about what your team needs.
           </p>
           <div className="fdb-cta-btns">
-        <Link href="/signup" className="button-primary">
+        <a href="https://app.fundleaf.co.uk/login" className="button-primary">
           Start finding funding
-        </Link>
+        </a>
             <Link href="/pricing" className="button-secondary">
               View pricing
             </Link>
