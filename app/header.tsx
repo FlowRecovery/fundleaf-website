@@ -116,7 +116,7 @@ export default function Header() {
 
             <div className="header-actions">
               <a href="https://app.fundleaf.co.uk/login" className="header-signin" onClick={closeAll}>
-                Sign in
+                Sign In
               </a>
               <a href="https://app.fundleaf.co.uk/login" className="header-cta" onClick={closeAll}>
                 Start finding funding
