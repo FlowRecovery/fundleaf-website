@@ -165,8 +165,8 @@ export default function Header() {
                       <Image
                         src={item.icon}
                         alt=""
-                        width={32}
-                        height={32}
+                        width={48}
+                        height={48}
                         className="nav-dropdown-icon"
                         aria-hidden="true"
                       />
