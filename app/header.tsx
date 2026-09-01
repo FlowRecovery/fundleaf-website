@@ -27,7 +27,7 @@ const featureItems = [
     label: "Applications",
     href: "/applications",
     icon: "/applications.svg",
-    description: "Follow every application through decision and payment.",
+    description: "Access Fundleaf on iOS, Android and desktop.",
   },
   {
     label: "Report Maker",
