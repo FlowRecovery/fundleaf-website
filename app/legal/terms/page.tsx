@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "The terms governing use of Fundleaf. These will be completed before launch.",
+    "The terms governing use of FundLeaf. These will be completed before launch.",
 };
 
 export default function TermsOfService() {
@@ -13,7 +13,7 @@ export default function TermsOfService() {
         <h1>Terms of Service</h1>
 
         <p>
-          These terms of service will be completed before Fundleaf launches.
+          These terms of service will be completed before FundLeaf launches.
           They will govern your use of the platform and explain what you can
           expect from us.
         </p>
@@ -27,7 +27,7 @@ export default function TermsOfService() {
         <h2>What we will cover</h2>
 
         <ul>
-          <li>What Fundleaf provides</li>
+          <li>What FundLeaf provides</li>
           <li>Your responsibilities</li>
           <li>Intellectual property</li>
           <li>Limitation of liability</li>

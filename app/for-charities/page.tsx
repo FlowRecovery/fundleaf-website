@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "For Charities",
   description:
-    "Fundleaf works differently depending on the size of your team. Find the setup that fits your charity.",
+    "FundLeaf works differently depending on the size of your team. Find the setup that fits your charity.",
 };
 
 const profiles = [
@@ -12,7 +12,7 @@ const profiles = [
     id: "solo",
     eyebrow: "You are the fundraising team",
     heading: "One person, everything to do.",
-    body: "You cover strategy, applications, donors and events, often part-time. There is no one else to hand a task to, so every missed reminder or forgotten deadline lands on you. Fundleaf takes the organisational weight off your shoulders so you can focus on the work that actually brings money in.",
+    body: "You cover strategy, applications, donors and events, often part-time. There is no one else to hand a task to, so every missed reminder or forgotten deadline lands on you. FundLeaf takes the organisational weight off your shoulders so you can focus on the work that actually brings money in.",
     bullets: [
       "A weekly shortlist of new opportunities replaces hours of searching across websites, funding directories and email alerts.",
       "The content library holds your governance, history and standard budgets, so every application starts most of the way finished.",
@@ -23,7 +23,7 @@ const profiles = [
     id: "small",
     eyebrow: "A small team sharing the load",
     heading: "Two to five people, one shared pipeline.",
-    body: "Fundraising and programmes overlap, and everyone has their own spreadsheet. Fundleaf gives you a single view of what is in progress, who owns it, and whether anyone has already approached the funder you are about to email.",
+    body: "Fundraising and programmes overlap, and everyone has their own spreadsheet. FundLeaf gives you a single view of what is in progress, who owns it, and whether anyone has already approached the funder you are about to email.",
     bullets: [
       "Shared pipeline visibility means no one duplicates work or double-approaches a funder.",
       "Application ownership is clear: who is drafting, who is reviewing, who is submitting.",
@@ -34,7 +34,7 @@ const profiles = [
     id: "department",
     eyebrow: "A department that needs coordination",
     heading: "More people, more structure needed.",
-    body: "When fundraising is a team function, you need controls, reporting and clarity about who can do what. Fundleaf gives you the structure without the overhead of a platform that tries to do everything.",
+    body: "When fundraising is a team function, you need controls, reporting and clarity about who can do what. FundLeaf gives you the structure without the overhead of a platform that tries to do everything.",
     bullets: [
       "Role-based access means trustees see reports while staff see the pipeline, without stepping on each other.",
       "Reporting to trustees is straightforward: export what you need, in the format they expect.",
@@ -75,7 +75,7 @@ export default function ForCharitiesPage() {
             For charities
           </p>
           <h1>
-            Fundleaf works&nbsp;differently depending on the size of&nbsp;your&nbsp;team.
+            FundLeaf works&nbsp;differently depending on the size of&nbsp;your&nbsp;team.
           </h1>
           <p className="fc-hero-sub">
             The buying decision is different when you are one person versus when
@@ -114,9 +114,9 @@ export default function ForCharitiesPage() {
           <p className="eyebrow" style={{ color: "var(--fl-stone)" }}>
             Honest positioning
           </p>
-          <h2 id="does-not-heading">What Fundleaf doesn&apos;t do</h2>
+          <h2 id="does-not-heading">What FundLeaf doesn&apos;t do</h2>
           <p className="fc-does-not-sub">
-            Fundleaf is not a CRM. It does not process donations, claim Gift Aid
+            FundLeaf is not a CRM. It does not process donations, claim Gift Aid
             or run events. It works alongside the CRM you already have. Naming
             this plainly is deliberate: it means you keep the system that works
             and add the piece that is missing.
@@ -152,7 +152,7 @@ export default function ForCharitiesPage() {
           <div className="fc-comparison-table">
             <div className="fc-comparison-header">
               <span>Current reality</span>
-              <span>With Fundleaf</span>
+              <span>With FundLeaf</span>
             </div>
             {comparison.map((row) => (
               <div key={row.reality} className="fc-comparison-row">

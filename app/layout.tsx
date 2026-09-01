@@ -7,11 +7,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://fundleaf.co.uk"),
   title: {
-    default: "Fundleaf — Funding, organised",
-    template: "%s | Fundleaf",
+    default: "FundLeaf — Funding, organised",
+    template: "%s | FundLeaf",
   },
   description:
-    "Find the funding to do more good. Fundleaf organises opportunities, applications and deadlines so your team can focus on the work that matters.",
+    "Find the funding to do more good. FundLeaf organises opportunities, applications and deadlines so your team can focus on the work that matters.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "Fundleaf — Funding, organised",
+    title: "FundLeaf — Funding, organised",
     description:
-      "Find the funding to do more good. Fundleaf organises opportunities, applications and deadlines so your team can focus on the work that matters.",
+      "Find the funding to do more good. FundLeaf organises opportunities, applications and deadlines so your team can focus on the work that matters.",
     url: "https://fundleaf.co.uk",
-    siteName: "Fundleaf",
+    siteName: "FundLeaf",
     type: "website",
   },
 };

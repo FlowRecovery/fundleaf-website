@@ -11,7 +11,7 @@ const features = [
   {
     title: "Everything in one place",
     description:
-      "Import funding data from anywhere and see it in one view. From spreadsheets to integrations, Fundleaf gives you a clear picture of everything happening across your organisation.",
+      "Import funding data from anywhere and see it in one view. From spreadsheets to integrations, FundLeaf gives you a clear picture of everything happening across your organisation.",
   },
   {
     title: "Grant tracking",
@@ -61,7 +61,7 @@ export default function FundraisingCrmPage() {
             Grants, funds and donors&nbsp;&ndash; all in one&nbsp;place.
           </h1>
           <p className="feature-hero-sub">
-            Stop juggling spreadsheets and scattered tools. Fundleaf gives your
+            Stop juggling spreadsheets and scattered tools. FundLeaf gives your
             team a single, clear view of every funding relationship and
             opportunity.
           </p>
@@ -90,7 +90,7 @@ export default function FundraisingCrmPage() {
         <div className="feature-grid-inner">
           <h2 id="features-heading">Built for how you actually work</h2>
           <p className="feature-grid-sub">
-            Fundleaf covers the essentials without the bloat. Every feature is
+            FundLeaf covers the essentials without the bloat. Every feature is
             designed to help your team spend less time on admin and more time
             securing funding.
           </p>
@@ -111,10 +111,10 @@ export default function FundraisingCrmPage() {
             <p className="eyebrow" style={{ color: "var(--fl-olive)" }}>
               Capabilities
             </p>
-            <h2 id="cap-heading">What you can do with Fundleaf</h2>
+            <h2 id="cap-heading">What you can do with FundLeaf</h2>
             <p>
               From the first grant you track to the hundredth donor record,
-              Fundleaf scales with your organisation.
+              FundLeaf scales with your organisation.
             </p>
           </div>
           <ul className="feature-capabilities-list">

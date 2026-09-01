@@ -16,7 +16,7 @@ export default function OrganisationProfile() {
       <div className="dash-header">
         <h1 className="dash-title">Organisation</h1>
         <p className="dash-sub">
-          Your profile drives eligibility matching across Fundleaf.
+          Your profile drives eligibility matching across FundLeaf.
         </p>
       </div>
 

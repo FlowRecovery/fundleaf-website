@@ -100,7 +100,7 @@ const faqs = [
   },
   {
     q: "What counts as an opportunity?",
-    a: "An opportunity is any grant, investment, sponsorship or partnership you track in Fundleaf, from initial discovery through to award.",
+    a: "An opportunity is any grant, investment, sponsorship or partnership you track in FundLeaf, from initial discovery through to award.",
   },
   {
     q: "Is training included?",
@@ -108,7 +108,7 @@ const faqs = [
   },
   {
     q: "Do you offer discounts for nonprofits?",
-    a: "Fundleaf is designed for organisations of all types. Contact us if you have specific pricing requirements.",
+    a: "FundLeaf is designed for organisations of all types. Contact us if you have specific pricing requirements.",
   },
 ];
 

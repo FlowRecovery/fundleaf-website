@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How Fundleaf handles your data. This policy will be completed before launch.",
+    "How FundLeaf handles your data. This policy will be completed before launch.",
 };
 
 export default function PrivacyPolicy() {
@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
         <h1>Privacy Policy</h1>
 
         <p>
-          This privacy policy will be completed before Fundleaf launches. It
+          This privacy policy will be completed before FundLeaf launches. It
           will explain what data we collect, how we use it, and your rights
           under UK data protection law.
         </p>

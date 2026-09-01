@@ -67,7 +67,7 @@ export default function Footer() {
         <div className="footer-brand-row">
           <Image
             src="/fundleaf_logo.svg"
-            alt="Fundleaf"
+            alt="FundLeaf"
             width={100}
             height={57}
             className="footer-logo"
@@ -79,7 +79,7 @@ export default function Footer() {
 
         <div className="footer-legal">
           <span className="footer-legal-text">
-            &copy; {new Date().getFullYear()} Fundleaf. Registered in England &amp; Wales.
+            &copy; {new Date().getFullYear()} FundLeaf. Registered in England &amp; Wales.
           </span>
           <div className="footer-legal-links">
             <Link href="/legal/privacy" className="footer-legal-link">Privacy</Link>

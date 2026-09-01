@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: article.date,
       authors: [article.author],
-      siteName: "Fundleaf",
+      siteName: "FundLeaf",
     },
     twitter: {
       card: "summary_large_image",
@@ -53,7 +53,7 @@ export default async function ArticlePage({ params }: Props) {
     url,
     publisher: {
       "@type": "Organization",
-      name: "Fundleaf",
+      name: "FundLeaf",
       url: "https://fundleaf.co.uk",
     },
   };

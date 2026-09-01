@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Cookie Policy",
-  description: "The cookies we use at Fundleaf.",
+  description: "The cookies we use at FundLeaf.",
 };
 
 export default function CookiePolicy() {

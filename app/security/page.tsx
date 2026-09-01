@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "GDPR & Security",
   description:
-    "How Fundleaf keeps your data safe. Security, privacy and GDPR compliance built in from day one.",
+    "How FundLeaf keeps your data safe. Security, privacy and GDPR compliance built in from day one.",
 };
 
 const securityFeatures = [
@@ -82,7 +82,7 @@ export default function SecurityPage() {
           </p>
           <h1>Your data is safe with&nbsp;us</h1>
           <p className="security-hero-sub">
-            Security and privacy are built into Fundleaf from day one. We take
+            Security and privacy are built into FundLeaf from day one. We take
             the protection of your organisation&apos;s data as seriously as you
             do.
           </p>
@@ -93,7 +93,7 @@ export default function SecurityPage() {
         <div className="security-grid-inner">
           <h2 id="security-heading">Security</h2>
           <p className="security-grid-sub">
-            Fundleaf is designed to meet the security expectations of
+            FundLeaf is designed to meet the security expectations of
             organisations handling sensitive funding data.
           </p>
           <div className="security-cards">
@@ -116,7 +116,7 @@ export default function SecurityPage() {
             <h2 id="gdpr-heading">Stress-free GDPR compliance</h2>
             <p>
               Used well, the GDPR can build trust with your supporters and keep
-              your data clean and compliant. Fundleaf was designed from the ground
+              your data clean and compliant. FundLeaf was designed from the ground
               up to help you do this.
             </p>
           </div>

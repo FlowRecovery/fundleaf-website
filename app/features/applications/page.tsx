@@ -21,7 +21,7 @@ const workflowFeatures = [
   {
     title: "Configured for you",
     description:
-      "Set up your own application criteria, stages and templates. Fundleaf adapts to the way your organisation works, not the other way around.",
+      "Set up your own application criteria, stages and templates. FundLeaf adapts to the way your organisation works, not the other way around.",
     bullets: [
       "Define your own review stages",
       "Create reusable application templates",
@@ -86,7 +86,7 @@ export default function ApplicationsPage() {
           </h1>
           <p className="feature-hero-sub">
             Follow funding applications from first submission to final decision.
-            Fundleaf gives your team a single view of every application in your
+            FundLeaf gives your team a single view of every application in your
             pipeline.
           </p>
           <div className="feature-hero-actions">
@@ -114,7 +114,7 @@ export default function ApplicationsPage() {
         <div className="feature-workflow-inner">
           <h2 id="workflow-heading">Built around your process</h2>
           <p className="feature-workflow-sub">
-            Every organisation handles applications differently. Fundleaf
+            Every organisation handles applications differently. FundLeaf
             gives you the structure to manage yours with confidence.
           </p>
           <div className="feature-workflow-cards">
@@ -139,10 +139,10 @@ export default function ApplicationsPage() {
             <p className="eyebrow" style={{ color: "var(--fl-olive)" }}>
               Capabilities
             </p>
-            <h2 id="cap-heading">What you can do with Fundleaf</h2>
+            <h2 id="cap-heading">What you can do with FundLeaf</h2>
             <p>
               From the first application you track to the hundredth decision,
-              Fundleaf scales with your organisation.
+              FundLeaf scales with your organisation.
             </p>
           </div>
           <div className="feature-capability-cards">

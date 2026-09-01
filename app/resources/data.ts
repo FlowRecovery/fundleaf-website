@@ -18,7 +18,7 @@ export const articles: Article[] = [
     slug: "how-to-write-a-case-for-support",
     title: "How to write a case for support that funders actually read",
     type: "Guide",
-    author: "Fundleaf",
+    author: "FundLeaf",
     date: "2026-01-15",
     readingTime: "8 min read",
     description:
@@ -51,13 +51,13 @@ export const articles: Article[] = [
     ],
     conversionHeading: "Make your next application faster",
     conversionBody:
-      "Fundleaf holds your case for support text as a reusable content block, so every application starts with your best version already loaded.",
+      "FundLeaf holds your case for support text as a reusable content block, so every application starts with your best version already loaded.",
   },
   {
     slug: "restricted-and-unrestricted-funding",
     title: "Understanding restricted and unrestricted funding",
     type: "Explainer",
-    author: "Fundleaf",
+    author: "FundLeaf",
     date: "2026-02-10",
     readingTime: "5 min read",
     description:
@@ -84,13 +84,13 @@ export const articles: Article[] = [
     ],
     conversionHeading: "Keep restrictions visible, not buried in a spreadsheet",
     conversionBody:
-      "Fundleaf lets you tag each opportunity with its restriction type and budget codes, so your team always knows what can be spent where.",
+      "FundLeaf lets you tag each opportunity with its restriction type and budget codes, so your team always knows what can be spent where.",
   },
   {
     slug: "national-lottery-heritage-fund-what-they-look-for",
     title: "What the National Lottery Heritage Fund looks for",
     type: "Funder profile",
-    author: "Fundleaf",
+    author: "FundLeaf",
     date: "2026-03-05",
     readingTime: "6 min read",
     description:
@@ -117,13 +117,13 @@ export const articles: Article[] = [
     ],
     conversionHeading: "Track your Heritage Fund application from start to finish",
     conversionBody:
-      "Fundleaf maps the Heritage Fund's stages to your pipeline, so you always know where your application sits and what comes next.",
+      "FundLeaf maps the Heritage Fund's stages to your pipeline, so you always know where your application sits and what comes next.",
   },
   {
     slug: "grant-application-content-library",
     title: "A grant application content library: what to prepare once",
     type: "Template",
-    author: "Fundleaf",
+    author: "FundLeaf",
     date: "2026-04-20",
     readingTime: "7 min read",
     description:
@@ -150,13 +150,13 @@ export const articles: Article[] = [
     ],
     conversionHeading: "Load your content library once, use it everywhere",
     conversionBody:
-      "Fundleaf stores your reusable blocks alongside your applications, so every new form starts with your best text already in place.",
+      "FundLeaf stores your reusable blocks alongside your applications, so every new form starts with your best text already in place.",
   },
   {
     slug: "reporting-to-funders-what-good-looks-like",
     title: "Reporting to funders: what good looks like",
     type: "Guide",
-    author: "Fundleaf",
+    author: "FundLeaf",
     date: "2026-05-12",
     readingTime: "6 min read",
     description:
@@ -183,7 +183,7 @@ export const articles: Article[] = [
     ],
     conversionHeading: "Reporting does not have to be a scramble",
     conversionBody:
-      "Fundleaf tracks reporting deadlines alongside application deadlines, so you are never surprised by a due date.",
+      "FundLeaf tracks reporting deadlines alongside application deadlines, so you are never surprised by a due date.",
   },
 ];
 

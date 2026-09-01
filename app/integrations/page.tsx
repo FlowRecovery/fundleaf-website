@@ -5,7 +5,7 @@ import IntegrationRequestForm from "./integration-request-form";
 export const metadata: Metadata = {
   title: "Integrations",
   description:
-    "Fundleaf works alongside your CRM, finance tools and calendar. Connect the systems you already use.",
+    "FundLeaf works alongside your CRM, finance tools and calendar. Connect the systems you already use.",
 };
 
 type IntegrationStatus = "live" | "planned";
@@ -99,10 +99,10 @@ export default function IntegrationsPage() {
             Integrations
           </p>
           <h1>
-            Fundleaf is not your&nbsp;CRM. It works with&nbsp;it.
+            FundLeaf is not your&nbsp;CRM. It works with&nbsp;it.
           </h1>
           <p className="int-hero-sub">
-            Your CRM holds supporters, donations and Gift Aid. Fundleaf holds
+            Your CRM holds supporters, donations and Gift Aid. FundLeaf holds
             funders, applications and deadlines. When an award comes in, the
             income and funder contact flow back to your CRM so the finance and
             reporting picture stays whole in one system.
@@ -124,7 +124,7 @@ export default function IntegrationsPage() {
               </ul>
             </div>
             <div className="int-division-card">
-              <h3>Fundleaf</h3>
+              <h3>FundLeaf</h3>
               <ul>
                 <li>Funder database and eligibility</li>
                 <li>Application drafting and tracking</li>
@@ -173,7 +173,7 @@ export default function IntegrationsPage() {
             </p>
             <h2 id="dev-heading">Build your own</h2>
             <p>
-              The Fundleaf REST API lets you read and write opportunities,
+              The FundLeaf REST API lets you read and write opportunities,
               applications and deadlines programmatically. If you need a
               integration we have not built yet, the API is the way to do it.
             </p>

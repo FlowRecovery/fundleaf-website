@@ -27,7 +27,7 @@ const featureItems = [
     label: "Applications",
     href: "/applications",
     icon: "/applications.svg",
-    description: "Access Fundleaf on iOS, Android and desktop.",
+    description: "Access FundLeaf on iOS, Android and desktop.",
   },
   {
     label: "Report Maker",
@@ -39,7 +39,7 @@ const featureItems = [
     label: "Integrations",
     href: "/integrations",
     icon: "/integrations.svg",
-    description: "Connect Fundleaf to your existing CRM and accounting tools.",
+    description: "Connect FundLeaf to your existing CRM and accounting tools.",
   },
 ];
 
@@ -123,10 +123,10 @@ export default function Header() {
         className={`site-header ${scrolled ? "site-header--scrolled" : ""}`}
       >
         <div className="header-inner">
-          <Link href="/" className="header-brand" aria-label="Fundleaf home">
+          <Link href="/" className="header-brand" aria-label="FundLeaf home">
             <Image
               src="/fundleaf_logo.svg"
-              alt="Fundleaf"
+              alt="FundLeaf"
               width={120}
               height={68}
               priority

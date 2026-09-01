@@ -5,7 +5,7 @@ import AppSidebar from "../components/app-sidebar";
 export const metadata: Metadata = {
   title: {
     default: "Dashboard",
-    template: "%s | Fundleaf",
+    template: "%s | FundLeaf",
   },
 };
 
@@ -22,7 +22,7 @@ export default function DashboardLayout({
           <div className="app-topbar-inner">
             <nav className="app-topbar-nav" aria-label="Breadcrumb">
               <Link href="/" className="app-topbar-home">
-                Fundleaf
+                FundLeaf
               </Link>
             </nav>
             <div className="app-topbar-actions">

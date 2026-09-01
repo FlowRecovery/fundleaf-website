@@ -51,7 +51,7 @@ const cookieDeclaration = [
       {
         name: "fl_cookie_consent",
         hostname: "fundleaf.co.uk",
-        vendor: "Fundleaf",
+        vendor: "FundLeaf",
         expiry: "Persistent",
         description:
           "Stores your cookie consent choices so the banner does not reappear on every page.",
@@ -202,7 +202,7 @@ export default function CookieSettings({ open, onClose }: CookieSettingsProps) {
         {tab === "categories" && (
           <div className="cookie-modal-body" role="tabpanel">
             <p className="cookie-modal-intro">
-              Below you can choose which of Fundleaf&apos;s cookies you are
+              Below you can choose which of FundLeaf&apos;s cookies you are
               happy to allow. You can see a list of cookies in each category
               along with more information about them in the cookie declaration.{" "}
               <a href="https://fundleaf.co.uk/legal/cookies">Learn more</a>
@@ -287,7 +287,7 @@ export default function CookieSettings({ open, onClose }: CookieSettingsProps) {
         {tab === "declaration" && (
           <div className="cookie-modal-body" role="tabpanel">
             <p className="cookie-modal-intro">
-              Below is a list of all of the cookies we use on the Fundleaf
+              Below is a list of all of the cookies we use on the FundLeaf
               website.{" "}
               <a href="https://fundleaf.co.uk/legal/cookies">Learn more</a>
             </p>

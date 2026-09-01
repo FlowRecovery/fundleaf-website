@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Accessibility statement",
   description:
-    "Fundleaf is committed to making this website accessible to everyone. This statement explains what we have done and what remains in progress.",
+    "FundLeaf is committed to making this website accessible to everyone. This statement explains what we have done and what remains in progress.",
 };
 
 export default function AccessibilityPage() {
@@ -15,7 +15,7 @@ export default function AccessibilityPage() {
 
         <h2>Our commitment</h2>
         <p>
-          Fundleaf is committed to making this website accessible to the widest
+          FundLeaf is committed to making this website accessible to the widest
           possible audience, regardless of ability or technology. We aim to meet
           WCAG 2.1 Level AA as a minimum standard.
         </p>

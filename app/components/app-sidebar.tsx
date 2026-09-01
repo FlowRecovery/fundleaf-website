@@ -76,7 +76,7 @@ export default function AppSidebar() {
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="var(--fl-olive)" />
             <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4" stroke="var(--fl-white)" strokeWidth="1.5" fill="none" />
           </svg>
-          <span>Fundleaf</span>
+          <span>FundLeaf</span>
         </Link>
       </div>
       <nav className="app-sidebar-nav">

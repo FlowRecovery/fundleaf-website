@@ -38,7 +38,7 @@ export default function Home() {
         <div className="workflow-inner">
           <h2 id="workflow-heading">How it works</h2>
           <p className="workflow-sub">
-            From discovery to award, Fundleaf keeps every step clear and
+            From discovery to award, FundLeaf keeps every step clear and
             connected.
           </p>
         </div>
@@ -224,7 +224,7 @@ export default function Home() {
             <p>
               Application windows, submission dates and reporting obligations
               all sit on one calendar, with reminders that escalate as the date
-              approaches. Fundleaf is built so that the deadline is never the
+              approaches. FundLeaf is built so that the deadline is never the
               thing you find out about too late.
             </p>
           </div>
@@ -268,7 +268,7 @@ export default function Home() {
             <li>
               <h3>Lightweight by design</h3>
               <p>
-                No heavy setup. Fundleaf stays out of the way and lets your
+                No heavy setup. FundLeaf stays out of the way and lets your
                 team focus on the work that matters.
               </p>
             </li>
