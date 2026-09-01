@@ -23,6 +23,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const headerRef = useRef<HTMLElement>(null);
+  const navRef = useRef<HTMLElement>(null);
   const dropdownRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   useEffect(() => {
@@ -43,9 +44,30 @@ export default function Header() {
     if (!mobileOpen) return;
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") closeAll();
+      if (e.key === "Tab") {
+        const nav = navRef.current;
+        if (!nav) return;
+        const focusable = nav.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     }
     document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen, closeAll]);
 
   useEffect(() => {
@@ -82,9 +104,17 @@ export default function Header() {
           </Link>
 
           <nav
+            ref={navRef}
             className={`header-nav ${mobileOpen ? "header-nav--open" : ""}`}
             aria-label="Main"
           >
+            {mobileOpen && (
+              <div
+                className="header-backdrop"
+                onClick={closeAll}
+                aria-hidden="true"
+              />
+            )}
             <div className="nav-dropdown" ref={(el) => { dropdownRefs.current.features = el; }}>
               <button
                 type="button"

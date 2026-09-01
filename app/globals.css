@@ -340,6 +340,33 @@ h3 {
 
 /* Burger menu */
 
+/* ── Mobile backdrop ────────────────────────────────── */
+
+.header-backdrop {
+  display: none;
+}
+
+@media (max-width: 63.99rem) {
+  .header-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    top: clamp(4rem, 10vw, 5rem);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 140;
+    animation: fadeIn 0.2s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+/* ── Burger ──────────────────────────────────────────── */
+
 .header-burger {
   display: none;
   flex-direction: column;
@@ -351,6 +378,8 @@ h3 {
   border: none;
   cursor: pointer;
   padding: var(--space-2);
+  position: relative;
+  z-index: 160;
 }
 
 .header-burger span {
@@ -359,7 +388,7 @@ h3 {
   height: 2px;
   background: var(--color-text);
   border-radius: 1px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-burger--open span:nth-child(1) {
@@ -385,6 +414,7 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
+    bottom: 100dvh;
     background: var(--fl-cream);
     flex-direction: column;
     align-items: flex-start;
@@ -392,8 +422,9 @@ h3 {
     gap: var(--space-2);
     overflow-y: auto;
     transform: translateX(100%);
-    transition: transform 0.25s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 150;
+    overscroll-behavior: contain;
   }
 
   .header-nav--open {
@@ -402,13 +433,19 @@ h3 {
 
   .header-actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     margin-left: 0;
     margin-top: var(--space-4);
     padding-top: var(--space-4);
     border-top: var(--border-subtle);
     width: 100%;
     gap: var(--space-3);
+  }
+
+  .header-actions .header-signin,
+  .header-actions .button-primary {
+    width: 100%;
+    justify-content: center;
   }
 
   .header-link,
@@ -422,7 +459,22 @@ h3 {
     box-shadow: none;
     border: none;
     padding-left: var(--space-4);
-    margin-top: var(--space-1);
+    margin-top: 0;
+    overflow: hidden;
+    animation: slideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      max-height: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      max-height: 500px;
+      transform: translateY(0);
+    }
   }
 }
 
