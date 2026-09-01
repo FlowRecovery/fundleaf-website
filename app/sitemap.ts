@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const publicPages = [
     "",
     "/for-charities",
-    "/funding-database",
+    "/grant-intelligence",
     "/pricing",
     "/resources",
     "/integrations",

@@ -10,7 +10,7 @@ export default function NotFound() {
           The page you are looking for does not exist or has been moved.
         </p>
         <div className="not-found-actions">
-          <Link href="/funding-database" className="button-primary">
+          <Link href="/grant-intelligence" className="button-primary">
             Browse the funding database
           </Link>
           <Link href="/" className="button-secondary">

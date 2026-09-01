@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import FundingDatabaseClient from "./funding-database-client";
 
 export const metadata: Metadata = {
-  title: "Funding Database",
+  title: "Grant Intelligence",
   description:
     "Relevant UK grant opportunities, clearly organised. Search trusts, foundations, lottery distributors and statutory funders.",
 };

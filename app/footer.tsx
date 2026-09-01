@@ -6,7 +6,7 @@ const footerColumns = [
   {
     heading: "Product",
     links: [
-      { label: "Grant Intelligence", href: "/funding-database" },
+      { label: "Grant Intelligence", href: "/grant-intelligence" },
       { label: "Applications", href: "/applications" },
       { label: "Integrations", href: "/integrations" },
       { label: "Pricing", href: "/pricing" },
