@@ -5,12 +5,42 @@ import Link from "next/link";
 import Image from "next/image";
 
 const featureItems = [
-  { label: "Grant Manager", href: "/grant-manager" },
-  { label: "Grant Intelligence", href: "/grant-intelligence" },
-  { label: "Fundraising CRM", href: "/funding-crm" },
-  { label: "Report Maker", href: "/report-maker" },
-  { label: "Integrations", href: "/integrations" },
-  { label: "Applications", href: "/applications" },
+  {
+    label: "Grant Intelligence",
+    href: "/grant-intelligence",
+    icon: "/grant_intelligence.svg",
+    description: "Discover relevant UK grant opportunities matched to your organisation.",
+  },
+  {
+    label: "Grant Manager",
+    href: "/grant-manager",
+    icon: "/grant_manager.svg",
+    description: "Track every application from submission to award in one place.",
+  },
+  {
+    label: "Fundraising CRM",
+    href: "/funding-crm",
+    icon: "/fundraising_CRM.svg",
+    description: "Manage funders, contacts and relationships alongside your pipeline.",
+  },
+  {
+    label: "Applications",
+    href: "/applications",
+    icon: "/applications.svg",
+    description: "Follow every application through decision and payment.",
+  },
+  {
+    label: "Report Maker",
+    href: "/report-maker",
+    icon: "/report_maker.svg",
+    description: "Generate funder reports and impact summaries in minutes.",
+  },
+  {
+    label: "Integrations",
+    href: "/integrations",
+    icon: "/integrations.svg",
+    description: "Connect Fundleaf to your existing CRM and accounting tools.",
+  },
 ];
 
 const whyItems = [
@@ -129,10 +159,21 @@ export default function Header() {
                 </svg>
               </button>
               {openDropdown === "features" && (
-                <div className="nav-dropdown-menu" role="menu">
+                <div className="nav-dropdown-menu nav-dropdown-menu--features" role="menu">
                   {featureItems.map((item) => (
-                    <Link key={item.href} href={item.href} className="nav-dropdown-item" role="menuitem" onClick={closeAll}>
-                      {item.label}
+                    <Link key={item.href} href={item.href} className="nav-dropdown-card" role="menuitem" onClick={closeAll}>
+                      <Image
+                        src={item.icon}
+                        alt=""
+                        width={32}
+                        height={32}
+                        className="nav-dropdown-icon"
+                        aria-hidden="true"
+                      />
+                      <div className="nav-dropdown-card-text">
+                        <span className="nav-dropdown-card-title">{item.label}</span>
+                        <span className="nav-dropdown-card-desc">{item.description}</span>
+                      </div>
                     </Link>
                   ))}
                 </div>
