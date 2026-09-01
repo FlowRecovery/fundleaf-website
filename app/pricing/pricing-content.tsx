@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const tiers = [
   {
     name: "Starter",
+    icon: "/free.svg",
     monthly: "Free",
     annual: "Free",
     description: "For small teams exploring funding opportunities.",
@@ -21,6 +23,7 @@ const tiers = [
   },
   {
     name: "Growth",
+    icon: "/growth.svg",
     monthly: "£39/mo",
     annual: "£33/mo",
     annualNote: "Billed £390/year",
@@ -41,6 +44,7 @@ const tiers = [
   },
   {
     name: "Scale",
+    icon: "/scale.svg",
     monthly: "£99/mo",
     annual: "£83/mo",
     annualNote: "Billed £990/year",
@@ -63,6 +67,7 @@ const tiers = [
   },
   {
     name: "Organisation",
+    icon: "/organisation.svg",
     monthly: "From £3,000/yr",
     annual: "From £3,000/yr",
     annualNote: "",
@@ -155,6 +160,14 @@ export default function PricingContent() {
             key={tier.name}
             className={`tier${tier.highlight ? " tier-highlight" : ""}`}
           >
+            <Image
+              src={tier.icon}
+              alt=""
+              width={48}
+              height={48}
+              className="tier-icon"
+              aria-hidden="true"
+            />
             <p className="tier-name">{tier.name}</p>
             <p className="tier-price">{annual ? tier.annual : tier.monthly}</p>
             {annual && tier.annualNote && (
