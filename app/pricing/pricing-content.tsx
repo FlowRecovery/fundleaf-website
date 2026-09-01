@@ -62,13 +62,13 @@ const tiers = [
     highlight: false,
   },
   {
-    name: "Enterprise",
+    name: "Organisation",
     monthly: "From £3,000/yr",
     annual: "From £3,000/yr",
     annualNote: "",
     saveNote: "",
     description:
-      "For large charities, groups and organisations requiring advanced security, integrations and support.",
+      "For larger charities and groups with more complex security, integration and support needs.",
     features: [
       "Custom/unlimited users",
       "Multiple entities",
@@ -104,7 +104,7 @@ const faqs = [
   },
   {
     q: "Is training included?",
-    a: "All plans include access to our help centre and email support. Growth and Scale plans include priority support. Enterprise plans include bespoke onboarding and dedicated support.",
+    a: "All plans include access to our help centre and email support. Growth and Scale plans include priority support. Organisation plans include bespoke onboarding and dedicated support.",
   },
   {
     q: "Do you offer discounts for nonprofits?",
@@ -166,7 +166,7 @@ export default function PricingContent() {
             <p className="tier-desc">{tier.description}</p>
             <a
               href={
-                tier.name === "Enterprise"
+                tier.name === "Organisation"
                   ? "mailto:hello@fundleaf.co.uk"
                   : "https://app.fundleaf.co.uk/login"
               }
