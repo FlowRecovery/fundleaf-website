@@ -7,12 +7,13 @@ const tiers = [
     name: "Starter",
     monthly: "Free",
     annual: "Free",
-    description:
-      "For small teams getting started with managing funding opportunities.",
+    description: "For small teams exploring funding opportunities.",
     features: [
-      "Up to 200 opportunities",
       "2 users",
+      "25 tracked opportunities",
+      "Basic funding search",
       "Basic opportunity tracking",
+      "Limited alerts",
       "Email support",
     ],
     cta: "Get started",
@@ -20,15 +21,19 @@ const tiers = [
   },
   {
     name: "Growth",
-    monthly: "£29/mo",
-    annual: "£26/mo",
-    description:
-      "For growing organisations that need more collaborators and richer tracking.",
+    monthly: "£39/mo",
+    annual: "£33/mo",
+    annualNote: "Billed £390/year",
+    saveNote: "Save £78/year",
+    description: "For charities actively managing grant applications.",
     features: [
-      "Up to 2,000 opportunities",
       "10 users",
-      "Application tracking",
-      "Organisation & contact management",
+      "Up to 2,000 funding opportunities",
+      "Unlimited tracked applications",
+      "Application pipeline",
+      "Funder relationship management",
+      "Saved searches and alerts",
+      "Eligibility matching",
       "Priority email support",
     ],
     cta: "Start free trial",
@@ -36,32 +41,44 @@ const tiers = [
   },
   {
     name: "Scale",
-    monthly: "£79/mo",
-    annual: "£71/mo",
-    description:
-      "For established teams managing complex funding portfolios across multiple projects.",
+    monthly: "£99/mo",
+    annual: "£83/mo",
+    annualNote: "Billed £990/year",
+    saveNote: "Save £198/year",
+    description: "For established fundraising teams.",
     features: [
-      "Unlimited opportunities",
       "50 users",
-      "Custom fields & workflows",
-      "Reporting & dashboards",
-      "Dedicated account manager",
+      "Unlimited opportunities",
+      "Everything in Growth",
+      "Advanced matching",
+      "Custom fields and workflows",
+      "Reporting and dashboards",
+      "Grant reporting calendar",
+      "Imports and exports",
+      "Team permissions",
+      "Onboarding",
     ],
     cta: "Start free trial",
     highlight: false,
   },
   {
     name: "Enterprise",
-    monthly: "Custom",
-    annual: "Custom",
+    monthly: "From £3,000/yr",
+    annual: "From £3,000/yr",
+    annualNote: "",
+    saveNote: "",
     description:
-      "For large organisations with specific security, compliance or integration needs.",
+      "For large charities, groups and organisations requiring advanced security, integrations and support.",
     features: [
+      "Custom/unlimited users",
+      "Multiple entities",
       "Everything in Scale",
-      "Unlimited users",
-      "SSO & advanced permissions",
-      "API access & integrations",
-      "Dedicated support & onboarding",
+      "SSO",
+      "API and integrations",
+      "Advanced permissions",
+      "Custom reporting",
+      "Dedicated support",
+      "Bespoke onboarding",
     ],
     cta: "Contact us",
     highlight: false,
@@ -79,7 +96,7 @@ const faqs = [
   },
   {
     q: "Do you offer discounts for annual billing?",
-    a: "Yes. Annual billing saves you approximately 10% compared to paying monthly.",
+    a: "Yes. Annual billing saves you two months on Growth (save £78/year) and Scale (save £198/year) compared to paying monthly.",
   },
   {
     q: "What counts as an opportunity?",
@@ -87,7 +104,7 @@ const faqs = [
   },
   {
     q: "Is training included?",
-    a: "All plans include access to our help centre and email support. Growth and Scale plans include priority support. Enterprise plans include dedicated onboarding.",
+    a: "All plans include access to our help centre and email support. Growth and Scale plans include priority support. Enterprise plans include bespoke onboarding and dedicated support.",
   },
   {
     q: "Do you offer discounts for nonprofits?",
@@ -127,7 +144,7 @@ export default function PricingContent() {
             className={`toggle-btn${annual ? " toggle-active" : ""}`}
             onClick={() => setAnnual(true)}
           >
-            Annual <span className="toggle-badge">Save 10%</span>
+            Annual <span className="toggle-badge">2 months free</span>
           </button>
         </div>
       </section>
@@ -140,9 +157,19 @@ export default function PricingContent() {
           >
             <p className="tier-name">{tier.name}</p>
             <p className="tier-price">{annual ? tier.annual : tier.monthly}</p>
+            {annual && tier.annualNote && (
+              <p className="tier-annual-note">{tier.annualNote}</p>
+            )}
+            {annual && tier.saveNote && (
+              <p className="tier-save-note">{tier.saveNote}</p>
+            )}
             <p className="tier-desc">{tier.description}</p>
             <a
-              href="https://app.fundleaf.co.uk/login"
+              href={
+                tier.name === "Enterprise"
+                  ? "mailto:hello@fundleaf.co.uk"
+                  : "https://app.fundleaf.co.uk/login"
+              }
               className={`tier-cta${tier.highlight ? " tier-cta-primary" : ""}`}
             >
               {tier.cta}
@@ -155,6 +182,8 @@ export default function PricingContent() {
           </div>
         ))}
       </section>
+
+      <p className="pricing-vat">Prices exclude VAT where applicable.</p>
 
       <section className="pricing-faq" aria-labelledby="faq-heading">
         <h2 id="faq-heading">Frequently asked questions</h2>
