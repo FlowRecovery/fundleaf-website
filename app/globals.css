@@ -300,9 +300,9 @@ h3 {
 
 .header-signin {
   display: inline-flex;
-  min-height: 2.5rem;
+  min-height: 3rem;
   align-items: center;
-  padding-inline: var(--space-5);
+  padding-inline: 1.375rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   background: transparent;
