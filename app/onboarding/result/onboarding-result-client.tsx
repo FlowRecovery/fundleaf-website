@@ -90,7 +90,7 @@ export default function OnboardingResultClient() {
       </div>
 
       <div className="onb-result-actions">
-        <Link href="/grant-intelligence" className="button-primary">
+        <Link href="/funding-database" className="button-primary">
           Browse full database
         </Link>
         <Link href="/dashboard" className="button-secondary">

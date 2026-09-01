@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const featureItems = [
   { label: "Grant Manager", href: "/grant-manager" },
-  { label: "Grant Intelligence", href: "/grant-intelligence" },
+  { label: "Grant Intelligence", href: "/funding-database" },
   { label: "Fundraising CRM", href: "/funding-crm" },
   { label: "Report Maker", href: "/report-maker" },
   { label: "Integrations", href: "/integrations" },
