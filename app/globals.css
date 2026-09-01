@@ -3674,6 +3674,12 @@ main {
   overflow: clip;
 }
 
+@media (min-width: 48rem) {
+  .ws-card {
+    max-width: 56rem;
+  }
+}
+
 .ws-copy {
   margin-bottom: var(--space-5);
 }
@@ -3699,15 +3705,9 @@ main {
 @media (min-width: 48rem) {
   .ws-form {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr auto;
     align-items: end;
     gap: var(--space-3);
-  }
-}
-
-@media (min-width: 64rem) {
-  .ws-form {
-    grid-template-columns: 1fr 1fr 1fr auto;
   }
 }
 
@@ -3737,10 +3737,6 @@ main {
   background: var(--fl-white);
   transition: border-color 0.15s ease;
   min-width: 0;
-}
-
-.ws-select {
-  min-width: 10rem;
 }
 
 .ws-select {
