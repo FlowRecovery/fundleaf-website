@@ -6,8 +6,8 @@ const footerColumns = [
   {
     heading: "Product",
     links: [
-      { label: "Funding database", href: "/funding-database" },
-      { label: "Applications", href: "/features/applications" },
+      { label: "Grant Intelligence", href: "/grant-intelligence" },
+      { label: "Applications", href: "/applications" },
       { label: "Integrations", href: "/integrations" },
       { label: "Pricing", href: "/pricing" },
     ],

@@ -4,10 +4,13 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const productItems = [
-  { label: "Funding database", href: "/funding-database" },
-  { label: "Applications", href: "/features/applications" },
+const featureItems = [
+  { label: "Grant Manager", href: "/grant-manager" },
+  { label: "Grant Intelligence", href: "/grant-intelligence" },
+  { label: "Fundraising CRM", href: "/funding-crm" },
+  { label: "Report Maker", href: "/report-maker" },
   { label: "Integrations", href: "/integrations" },
+  { label: "Applications", href: "/applications" },
 ];
 
 export default function Header() {
@@ -77,22 +80,22 @@ export default function Header() {
             className={`header-nav ${mobileOpen ? "header-nav--open" : ""}`}
             aria-label="Main"
           >
-            <div className="nav-dropdown" ref={(el) => { dropdownRefs.current.product = el; }}>
+            <div className="nav-dropdown" ref={(el) => { dropdownRefs.current.features = el; }}>
               <button
                 type="button"
                 className="nav-dropdown-trigger"
-                aria-expanded={openDropdown === "product"}
+                aria-expanded={openDropdown === "features"}
                 aria-haspopup="true"
-                onClick={() => toggleDropdown("product")}
+                onClick={() => toggleDropdown("features")}
               >
-                Product
-                <svg className={`nav-chevron ${openDropdown === "product" ? "nav-chevron--open" : ""}`} width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                Features
+                <svg className={`nav-chevron ${openDropdown === "features" ? "nav-chevron--open" : ""}`} width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
-              {openDropdown === "product" && (
+              {openDropdown === "features" && (
                 <div className="nav-dropdown-menu" role="menu">
-                  {productItems.map((item) => (
+                  {featureItems.map((item) => (
                     <Link key={item.href} href={item.href} className="nav-dropdown-item" role="menuitem" onClick={closeAll}>
                       {item.label}
                     </Link>
