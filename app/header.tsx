@@ -13,6 +13,11 @@ const featureItems = [
   { label: "Applications", href: "/applications" },
 ];
 
+const whyItems = [
+  { label: "About", href: "/about" },
+  { label: "For charities", href: "/for-charities" },
+];
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -104,15 +109,36 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="/for-charities" className="header-link" onClick={closeAll}>
-              For charities
-            </Link>
             <Link href="/pricing" className="header-link" onClick={closeAll}>
               Pricing
             </Link>
             <Link href="/resources" className="header-link" onClick={closeAll}>
               Resources
             </Link>
+
+            <div className="nav-dropdown" ref={(el) => { dropdownRefs.current.why = el; }}>
+              <button
+                type="button"
+                className="nav-dropdown-trigger"
+                aria-expanded={openDropdown === "why"}
+                aria-haspopup="true"
+                onClick={() => toggleDropdown("why")}
+              >
+                Why FundLeaf
+                <svg className={`nav-chevron ${openDropdown === "why" ? "nav-chevron--open" : ""}`} width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              {openDropdown === "why" && (
+                <div className="nav-dropdown-menu" role="menu">
+                  {whyItems.map((item) => (
+                    <Link key={item.href} href={item.href} className="nav-dropdown-item" role="menuitem" onClick={closeAll}>
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <div className="header-actions">
               <a href="https://app.fundleaf.co.uk/login" className="header-signin" onClick={closeAll}>
